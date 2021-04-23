@@ -6,7 +6,7 @@ import SearchTitle from "./../searchTitle";
 const Search = () => {
   return (
     <form className="search">
-      <div className="wrapper">
+      <div className="wrapper search__wrapper">
         <SearchTitle />
       </div>
     </form>

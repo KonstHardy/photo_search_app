@@ -1,0 +1,35 @@
+.search__title {
+  color: #fff;
+  font-size: 4.5rem;
+  font-family: Calibri, sans-serif;
+  text-align: center;
+}
+.search__subtitle {
+  color: #ccc;
+  font-size: 0.85rem;
+  font-family: Calibri, sans-serif;
+  margin-bottom: 4.5rem;
+}
+.search__subtitle::before {
+  content: "*";
+  margin-right: 5px;
+  margin-left: 15px;
+}
+.search__subtitle-link {
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+}
+.search__subtitle-link::after {
+  position: absolute;
+  content: "";
+  border-bottom: 1px solid #fff;
+  width: 0;
+  right: 0;
+  bottom: -2px;
+  transition: width 0.3s ease-in-out;
+}
+.search__subtitle-link:hover::after,
+.search__subtitle-link:focus::after {
+  width: 100%;
+}
