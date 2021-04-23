@@ -3,17 +3,17 @@ import "./searchBar.css";
 
 const SearchBar = () => {
   return (
-    <>
+    <div className="searchBar">
       <input
-        className="search__input"
+        className="searchBar__input"
         placeholder={`Try searching "dogs" or "cats"`}
         type="text"
         required
       ></input>
-      <button className="search__btn btn" type="submit">
-        <span className="search__btn-span">Search</span>
+      <button className="searchBar__btn btn" type="submit">
+        <span className="searchBar__btn-span">Search</span>
       </button>
-    </>
+    </div>
   );
 };
 
