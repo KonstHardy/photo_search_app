@@ -1,14 +1,14 @@
 .search__title {
-  color: #fff;
-  font-size: 4.5rem;
   font-family: Calibri, sans-serif;
+  font-size: 4.5rem;
   text-align: center;
+  color: #fff;
 }
 .search__subtitle {
-  color: #ccc;
-  font-size: 0.85rem;
   font-family: Calibri, sans-serif;
+  font-size: 0.85rem;
   margin-bottom: 4.5rem;
+  color: #ccc;
 }
 .search__subtitle::before {
   content: "*";
@@ -18,13 +18,13 @@
 .search__subtitle-link {
   position: relative;
   display: inline-block;
+  font-weight: 600;
   background: linear-gradient(to right, #1cb1da 50%, #fff 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
-  font-weight: 600;
   transition: background-position 0.4s ease;
 }
 .search__subtitle-link:hover {
