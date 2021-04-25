@@ -14,8 +14,11 @@ const initialState = [
 ];
 
 export const rootReducer = (state = initialState, action) => {
-  // default:
-  //     return state;
+  switch (action.type) {
+    case "SEARCH_PHOTO":
+      return { ...state, action };
 
-  return state;
+    default:
+      return state;
+  }
 };
