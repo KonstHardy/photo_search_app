@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Search />
-      <PhotoList />
+      <PhotoList photos={photos} />
     </>
   );
 }
