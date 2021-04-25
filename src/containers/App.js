@@ -4,6 +4,7 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 
 import Search from "./../components/search";
+import PhotoList from "./../components/photoList";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Search />
+      <PhotoList />
     </>
   );
 }
