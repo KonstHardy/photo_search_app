@@ -1,6 +1,9 @@
 .photoCard:nth-child(3n + 1) {
   grid-row-end: span 2;
 }
+.photoCard:nth-child(5n) {
+  grid-column-end: span 2;
+}
 .photoCard__image {
   display: flex;
   width: 100%;
