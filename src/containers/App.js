@@ -8,7 +8,7 @@ import PhotoList from "./../components/photoList";
 
 function App() {
   const dispatch = useDispatch();
-  const photos = useSelector((state) => state);
+  const photos = useSelector((state) => state.photos);
   // console.log(photos);
 
   return (
