@@ -1,3 +1,5 @@
+import { SEARCH_PHOTO } from "./types";
+
 const initialState = [
   {
     id: "kimZX28vZHo",
@@ -69,7 +71,7 @@ const initialState = [
 
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SEARCH_PHOTO":
+    case SEARCH_PHOTO:
       return { ...state, action };
 
     default:
