@@ -4,7 +4,6 @@ import "./searchBar.css";
 import { connect } from "react-redux";
 import { addSearchPhoto } from "./../../store/actions";
 import { Unsplash } from "../../api";
-import store from "../../store";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
