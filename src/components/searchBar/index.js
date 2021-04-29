@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Unsplash } from "../../api";
 import "./searchBar.css";
 
 const SearchBar = () => {
@@ -7,6 +8,21 @@ const SearchBar = () => {
   const onChange = (event) => {
     setSearchQuery(event.target.value);
     // console.log(event.target.value);
+  };
+
+  const fetchPhotos = () => {
+    Unsplash.search
+      .getPhotos({
+        query: setSearchQuery,
+      })
+      .then((result) => {
+        if (result.errors) {
+          console.log("error occurred: ", result.errors[0]);
+        } else {
+          const searchResult = result.response;
+          console.log("search result: ", searchResult);
+        }
+      });
   };
 
   return (
@@ -19,7 +35,11 @@ const SearchBar = () => {
         type="text"
         required
       ></input>
-      <button className="searchBar__btn btn" type="submit">
+      <button
+        onClick={fetchPhotos}
+        className="searchBar__btn btn"
+        type="submit"
+      >
         <span className="searchBar__btn-span">Search</span>
       </button>
     </div>
