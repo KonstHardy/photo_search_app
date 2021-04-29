@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { Unsplash } from "../../api";
 import "./searchBar.css";
+
+import { connect } from "react-redux";
+import { addSearchPhoto } from "./../../store/actions";
+import { Unsplash } from "../../api";
+import store from "../../store";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,6 +24,7 @@ const SearchBar = () => {
           console.log("error occurred: ", result.errors[0]);
         } else {
           const searchResult = result.response;
+          addSearchPhoto(searchResult);
           console.log("search result: ", searchResult);
         }
       });
@@ -46,4 +51,10 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addSearchPhoto: (photos) => dispatch(addSearchPhoto(photos)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SearchBar);
