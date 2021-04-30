@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./searchBar.css";
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 
 import { addSearchPhoto } from "./../../store/actions";
@@ -12,12 +12,12 @@ const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
 
-  const onChange = (event) => {
-    setSearchQuery(event.target.value);
-    // console.log(event.target.value);
-  };
+  // const onChange = (event) => {
+  //   setSearchQuery(event.target.value);
+  //   // console.log(event.target.value);
+  // };
 
-  const handleSubmit = (e) => {
+  const onSearchSubmit = (e) => {
     e.preventDefault();
   };
 
@@ -38,19 +38,19 @@ const SearchBar = () => {
   };
 
   return (
-    <form className="searchBar" onSubmit={handleSubmit}>
+    <form className="searchBar" onSubmit={onSearchSubmit}>
       <input
         className="searchBar__input"
         value={searchQuery}
-        onChange={onChange}
-        placeholder={`Try searching "dogs" or "cats"`}
+        onChange={(e) => setSearchQuery(e.target.value)}
         type="text"
+        placeholder={`Try searching "dogs" or "cats"`}
         required
       ></input>
       <button
-        onClick={fetchPhotos}
         className="searchBar__btn btn"
         type="submit"
+        onClick={fetchPhotos}
       >
         <span className="searchBar__btn-span">Search</span>
       </button>
@@ -58,10 +58,12 @@ const SearchBar = () => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addSearchPhoto: (photos) => dispatch(addSearchPhoto(photos)),
-  };
-};
+export default SearchBar;
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addSearchPhoto: (photos) => dispatch(addSearchPhoto(photos)),
+//   };
+// };
+
+// export default connect(null, mapDispatchToProps)(SearchBar);
