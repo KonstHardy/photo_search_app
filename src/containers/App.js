@@ -1,13 +1,12 @@
 import React from "react";
-import "./App.css";
+import { useSelector } from "react-redux";
 
-import { useDispatch, useSelector } from "react-redux";
+import "./App.css";
 
 import Search from "./../components/search";
 import PhotoList from "./../components/photoList";
 
 function App() {
-  const dispatch = useDispatch();
   const photos = useSelector((state) => state.photos);
   // console.log(photos);
 

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+
 import "./searchBar.css";
 
 import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+
 import { addSearchPhoto } from "./../../store/actions";
 import { Unsplash } from "../../api";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const dispatch = useDispatch();
 
   const onChange = (event) => {
     setSearchQuery(event.target.value);
