@@ -13,6 +13,10 @@ const SearchBar = () => {
     // console.log(event.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   const fetchPhotos = () => {
     Unsplash.search
       .getPhotos({
@@ -30,7 +34,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="searchBar">
+    <form className="searchBar" onSubmit={handleSubmit}>
       <input
         className="searchBar__input"
         value={searchQuery}
@@ -46,7 +50,7 @@ const SearchBar = () => {
       >
         <span className="searchBar__btn-span">Search</span>
       </button>
-    </div>
+    </form>
   );
 };
 
