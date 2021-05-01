@@ -7,7 +7,11 @@ const PhotoCard = (props) => {
 
   return (
     <div className="photoCard">
-      <img className="photoCard__image" alt={photo.alt} src={photo.src} />
+      <img
+        className="photoCard__image"
+        alt={photo.alt_description}
+        src={photo.urls.regular}
+      />
     </div>
   );
 };
