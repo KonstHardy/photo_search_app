@@ -6,5 +6,4 @@ const ACCESS_KEY = "V7Sr52HbltODrFjnlVkvTO3gIh50m4CeGsLozyTFE1E";
 export const Unsplash = createApi({
   accessKey: ACCESS_KEY,
   apiUrl: API_URL,
-  per_page: 11,
 });
