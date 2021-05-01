@@ -1,4 +1,4 @@
-# infinity_ptoto_gallery
+# infinity_photo_gallery
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
