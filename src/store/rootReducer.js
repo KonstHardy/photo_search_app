@@ -74,7 +74,8 @@ const initialState = {
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_PHOTO:
-      return { ...state, photos: [...state.photos, ...action.payload] };
+      return { ...state, photos: action.payload };
+    // return { ...state, photos: [...state.photos, ...action.payload] };
 
     default:
       return state;
