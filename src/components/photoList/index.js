@@ -1,10 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import "./photoList.css";
 
 import PhotoCard from "./../photoCard";
 
-const PhotoList = (props) => {
-  const { photos } = props;
+const PhotoList = () => {
+  const photos = useSelector((state) => state.photos);
   // console.log(photos);
 
   return (
