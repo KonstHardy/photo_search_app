@@ -1,1 +1,1 @@
-export const SEARCH_PHOTO = "SEARCH_PHOTO";
+export const FETCH_PHOTOS = "FETCH_PHOTOS";

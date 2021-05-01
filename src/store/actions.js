@@ -1,4 +1,4 @@
-import { SEARCH_PHOTO } from "./types";
+import { FETCH_PHOTOS } from "./types";
 import { Unsplash } from "./../api";
 
 export function fetchPhotos(setSearchQuery) {
@@ -10,6 +10,6 @@ export function fetchPhotos(setSearchQuery) {
     // console.log(response.response.results);
 
     console.log(response);
-    dispatch({ type: SEARCH_PHOTO, payload: response });
+    dispatch({ type: FETCH_PHOTOS, payload: response });
   };
 }

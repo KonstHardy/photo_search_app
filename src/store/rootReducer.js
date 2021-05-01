@@ -1,4 +1,4 @@
-import { SEARCH_PHOTO } from "./types";
+import { FETCH_PHOTOS } from "./types";
 
 const initialState = {
   photos: [
@@ -73,7 +73,7 @@ const initialState = {
 
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SEARCH_PHOTO:
+    case FETCH_PHOTOS:
       return { ...state, photos: action.payload };
     // return { ...state, photos: [...state.photos, ...action.payload] };
 
