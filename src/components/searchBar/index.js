@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import "./searchBar.css";
 
-import { fetchPhotos } from "./../../store/actions";
+import { searchPhotos } from "./../../store/actions";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,7 +12,7 @@ const SearchBar = () => {
   const onSearchSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(fetchPhotos(setSearchQuery));
+    dispatch(searchPhotos(setSearchQuery));
   };
 
   return (

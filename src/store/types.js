@@ -1,1 +1,2 @@
+export const SEARCH_PHOTOS = "SEARCH_PHOTOS";
 export const FETCH_PHOTOS = "FETCH_PHOTOS";

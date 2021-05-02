@@ -1,10 +1,26 @@
-import { FETCH_PHOTOS } from "./types";
+import { SEARCH_PHOTOS, FETCH_PHOTOS } from "./types";
 import { Unsplash } from "./../api";
 
-export function fetchPhotos(setSearchQuery) {
+let counter = 1;
+
+export function searchPhotos(setSearchQuery) {
   return async (dispatch) => {
     const response = await Unsplash.search.getPhotos({
       query: setSearchQuery,
+      page: counter++,
+      per_page: 11,
+    });
+    // const json = await response.json();
+    // console.log(response.response.results);
+
+    console.log(response);
+    dispatch({ type: SEARCH_PHOTOS, payload: response.response.results });
+  };
+}
+
+export function fetchPhotos() {
+  return async (dispatch) => {
+    const response = await Unsplash.search.getPhotos({
       per_page: 11,
     });
     // const json = await response.json();
