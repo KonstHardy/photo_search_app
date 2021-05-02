@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import "./searchBar.css";
 
-import { searchPhotos } from "./../../store/actions";
+import { searchPhotos, fetchPhotos } from "./../../store/actions";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +14,10 @@ const SearchBar = () => {
 
     dispatch(searchPhotos(setSearchQuery));
   };
+
+  useEffect(() => {
+    dispatch(fetchPhotos(setSearchQuery));
+  }, []);
 
   return (
     <form className="searchBar" onSubmit={onSearchSubmit}>
