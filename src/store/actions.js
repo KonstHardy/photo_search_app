@@ -3,10 +3,10 @@ import { Unsplash } from "./../api";
 
 let counter = 1;
 
-export function searchPhotos(setSearchQuery) {
+export function searchPhotos(searchQuery) {
   return async (dispatch) => {
     const response = await Unsplash.search.getPhotos({
-      query: setSearchQuery,
+      query: searchQuery,
       page: counter++,
       per_page: 11,
     });

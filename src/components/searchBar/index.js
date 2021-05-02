@@ -12,7 +12,7 @@ const SearchBar = () => {
   const onSearchSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(searchPhotos(setSearchQuery));
+    dispatch(searchPhotos(searchQuery));
   };
 
   useEffect(() => {
