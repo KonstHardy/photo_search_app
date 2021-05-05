@@ -7,7 +7,11 @@ const SearchTitle = () => {
       <h1 className="search__title">Photo Gallery App</h1>
       <p className="search__subtitle">
         All Images provided by&nbsp;
-        <a className="search__subtitle-link" href="https://unsplash.com/">
+        <a
+          className="search__subtitle-link"
+          href="https://unsplash.com/"
+          target="_blank"
+        >
           Unsplash
         </a>
       </p>
