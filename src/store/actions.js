@@ -10,22 +10,18 @@ export function searchPhotos(searchQuery) {
       page: counter++,
       per_page: 11,
     });
-    // const json = await response.json();
-    // console.log(response.response.results);
 
     console.log(response);
     dispatch({ type: SEARCH_PHOTOS, payload: response.response.results });
   };
 }
 
-export function fetchPhotos(setSearchQuery) {
+export function fetchPhotos() {
   return async (dispatch) => {
     const response = await Unsplash.search.getPhotos({
-      query: setSearchQuery,
+      query: "",
       per_page: 11,
     });
-    // const json = await response.json();
-    // console.log(response.response.results);
 
     console.log(response);
     dispatch({ type: FETCH_PHOTOS, payload: response.response.results });

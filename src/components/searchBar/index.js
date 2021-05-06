@@ -16,7 +16,7 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchPhotos(setSearchQuery));
+    dispatch(fetchPhotos());
   }, []);
 
   return (
