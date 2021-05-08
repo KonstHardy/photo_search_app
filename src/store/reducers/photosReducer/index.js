@@ -1,10 +1,10 @@
-import { SEARCH_PHOTOS, FETCH_PHOTOS } from "./types";
+import { SEARCH_PHOTOS, FETCH_PHOTOS } from "../../types";
 
 const initialState = {
   photos: [],
 };
 
-export const rootReducer = (state = initialState, action) => {
+const photoReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_PHOTOS:
       return { ...state, photos: action.payload };
@@ -18,3 +18,5 @@ export const rootReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default photoReducer;
