@@ -1,29 +1,30 @@
+import { toJson } from "unsplash-js";
+import unsplash from "./../api";
+
 import { SEARCH_PHOTOS, FETCH_PHOTOS } from "./types";
-import { Unsplash } from "./../api";
 
 let counter = 1;
 
 export function searchPhotos(searchQuery) {
   return async (dispatch) => {
-    const response = await Unsplash.search.getPhotos({
-      query: searchQuery,
-      page: counter++,
-      per_page: 11,
-    });
-
-    console.log(response);
-    dispatch({ type: SEARCH_PHOTOS, payload: response.response.results });
+    await unsplash.search
+      .photos(searchQuery, 1, 11)
+      .then(toJson)
+      .then((json) => {
+        console.log("SEARCH_PHOTOS", json);
+        dispatch({ type: SEARCH_PHOTOS, payload: json.results });
+      });
   };
 }
 
-export function fetchPhotos() {
-  return async (dispatch) => {
-    const response = await Unsplash.search.getPhotos({
-      query: "",
-      per_page: 11,
-    });
-
-    console.log(response);
-    dispatch({ type: FETCH_PHOTOS, payload: response.response.results });
-  };
-}
+// export function fetchPhotos() {
+//   return async (dispatch) => {
+//     await unsplash.search
+//       .photos("random", 1, 11)
+//       .then(toJson)
+//       .then((response) => {
+//         console.log("FETCH_PHOTOS", response.results);
+//         dispatch({ type: FETCH_PHOTOS, payload: response.results });
+//       });
+//   };
+// }

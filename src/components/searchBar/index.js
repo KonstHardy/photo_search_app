@@ -15,9 +15,9 @@ const SearchBar = () => {
     dispatch(searchPhotos(searchQuery));
   };
 
-  useEffect(() => {
-    dispatch(fetchPhotos());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchPhotos());
+  // }, []);
 
   return (
     <form className="searchBar" onSubmit={onSearchSubmit}>
