@@ -6,8 +6,8 @@ import "./photoList.css";
 import PhotoCard from "./../photoCard";
 
 const PhotoList = () => {
-  const photos = useSelector((state) => state.photos);
-  // console.log(photos);
+  const photos = useSelector((state) => state.photos.photos);
+  // console.log("photos", photos);
 
   return (
     <div className="photoList">
