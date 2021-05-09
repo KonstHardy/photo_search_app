@@ -7,11 +7,7 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ACCESS_KEY: {
-      return {
-        ...state,
-        ...action.payload,
-        isAuth: true,
-      };
+      return { ...state, isAuth: action.payload };
     }
 
     default:

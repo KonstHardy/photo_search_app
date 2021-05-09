@@ -13,15 +13,16 @@ export const authenticationUrl = unsplash.auth.getAuthenticationUrl([
 
 // location.assign(authenticationUrl);
 
-export function loginAction() {
+export function loginAction(code) {
   return async (dispatch) => {
-    // await unsplash.auth
-    //   .userAuthentication(query.code)
-    //   .then(toJson)
-    //   .then((json) => {
-    //     console.log("GET_ACCESS_KEY", json);
-    //     unsplash.auth.setBearerToken(json.access_token);
-    //     dispatch({ type: GET_ACCESS_KEY, payload: json.results });
-    //   });
+    await unsplash.auth
+      // .userAuthentication(query.code)
+      .userAuthentication(code)
+      .then(toJson)
+      .then((json) => {
+        console.log("GET_ACCESS_KEY", json);
+        unsplash.auth.setBearerToken(json.access_token);
+        dispatch({ type: GET_ACCESS_KEY, payload: json.results });
+      });
   };
 }
