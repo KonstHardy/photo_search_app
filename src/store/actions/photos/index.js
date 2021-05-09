@@ -1,27 +1,9 @@
 import { toJson } from "unsplash-js";
-import unsplash from "./../api";
+import unsplash from "../../../api";
 
-import { SEARCH_PHOTOS, FETCH_PHOTOS } from "./types";
-
-export const authenticationUrl = unsplash.auth.getAuthenticationUrl([
-  "public",
-  "read_user",
-  "write_user",
-  "read_photos",
-  "write_photos",
-]);
-
-// Now that you have an authentication url, you'll want to redirect the user to it.
-// location.assign(authenticationUrl);
+import { SEARCH_PHOTOS, FETCH_PHOTOS } from "../../types";
 
 let pageCounter = 1;
-
-// unsplash.auth
-//   .userAuthentication(query.code)
-//   .then(toJson)
-//   .then((json) => {
-//     unsplash.auth.setBearerToken(json.access_token);
-//   });
 
 export function searchPhotos(searchQuery) {
   return async (dispatch) => {
