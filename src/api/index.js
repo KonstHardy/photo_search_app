@@ -1,11 +1,13 @@
 import Unsplash from "unsplash-js";
 
 const APP_ACCESS_KEY = "V7Sr52HbltODrFjnlVkvTO3gIh50m4CeGsLozyTFE1E";
-// const API_URL = "https://api.unsplash.com";
+const APP_SECRET = "26lh7dwP3S5wT_NCvvrfzEWwEHNid9vcVdTes2MSMEM";
+const CALLBACK_URL = "http://localhost:3000/";
 
 const unsplash = new Unsplash({
   accessKey: APP_ACCESS_KEY,
-  // apiUrl: API_URL,
+  secret: APP_SECRET,
+  callbackUrl: CALLBACK_URL,
 });
 
 export default unsplash;
