@@ -20,7 +20,7 @@ export function searchPhotos(searchQuery) {
 export function fetchPhotos() {
   return async (dispatch) => {
     await unsplash.search
-      .photos("random", 1, 11)
+      .photos(1, 11)
       .then(toJson)
       .then((response) => {
         console.log("FETCH_PHOTOS", response.results);
