@@ -11,6 +11,7 @@ const SearchTitle = () => {
           className="search__subtitle-link"
           href="https://unsplash.com/"
           target="_blank"
+          rel="noreferrer"
         >
           Unsplash
         </a>
