@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 
 import "./photoList.css";
 
-import PhotoCard from "./../photoCard";
+import PhotoCard from "../photoCard";
+import Loader from "../loader";
 
 const PhotoList = () => {
   const photos = useSelector((state) => state.photos.photos);
-  // console.log("photos", photos);
 
   return (
     <div className="photoList">
@@ -15,7 +15,7 @@ const PhotoList = () => {
         {photos.length > 0 ? (
           photos.map((photo) => <PhotoCard photo={photo} key={photo.id} />)
         ) : (
-          <p>Loading...</p>
+          <Loader />
         )}
       </div>
     </div>
