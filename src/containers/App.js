@@ -9,7 +9,8 @@ import PhotoList from "./../components/photoList";
 import { loginAction } from "../store/actions/auth";
 
 function App() {
-  const isAuth = useSelector((state) => state.isAuth);
+  const isAuth = useSelector((state) => state.auth.isAuth);
+
   console.log("isAuth", isAuth);
 
   const dispatch = useDispatch();

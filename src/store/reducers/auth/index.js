@@ -1,7 +1,8 @@
 import { GET_ACCESS_KEY } from "../../types";
 
 const initialState = {
-  isAuth: false,
+  // isAuth: false,
+  isAuth: localStorage.getItem("BearerToken"),
 };
 
 const authReducer = (state = initialState, action) => {
