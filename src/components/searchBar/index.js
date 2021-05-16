@@ -4,19 +4,29 @@ import { useDispatch } from "react-redux";
 import "./searchBar.css";
 
 import { searchPhotos, fetchPhotos } from "../../store/actions/photos";
+import { showLoader, hideLoader } from "../../store/actions/loader";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
   const dispatch = useDispatch();
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
 
+    dispatch(showLoader());
+    // setTimeout(() => {
     dispatch(searchPhotos(searchQuery));
+    dispatch(hideLoader());
+    // }, 3000);
   };
 
   useEffect(() => {
+    dispatch(showLoader());
+    // setTimeout(() => {
     dispatch(fetchPhotos());
+    dispatch(hideLoader());
+    // }, 3000);
   }, []);
 
   return (

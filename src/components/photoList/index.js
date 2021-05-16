@@ -8,15 +8,18 @@ import Loader from "../loader";
 
 const PhotoList = () => {
   const photos = useSelector((state) => state.photos.photos);
+  const loading = useSelector((state) => state.loader.loading);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="photoList">
       <div className="wrapper photoList__wrapper">
-        {photos.length > 0 ? (
-          photos.map((photo) => <PhotoCard photo={photo} key={photo.id} />)
-        ) : (
-          <Loader />
-        )}
+        {photos.map((photo) => (
+          <PhotoCard photo={photo} key={photo.id} />
+        ))}
       </div>
     </div>
   );
