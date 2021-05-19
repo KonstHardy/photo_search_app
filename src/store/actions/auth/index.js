@@ -11,15 +11,11 @@ const authenticationUrl = unsplash.auth.getAuthenticationUrl([
   "write_photos",
 ]);
 
-// window.location.assign(authenticationUrl);
-
 const code = window.location.search.split("code=")[1];
 
+// window.location.assign(authenticationUrl);
+
 export function loginAction() {
-  // window.location.assign(authenticationUrl);
-
-  // const code = window.location.search.split("code=")[1];
-
   return async (dispatch) => {
     await unsplash.auth
       .userAuthentication(code)
@@ -27,10 +23,13 @@ export function loginAction() {
       .then((json) => {
         unsplash.auth.setBearerToken(json.access_token);
 
-        // window.location.assign(authenticationUrl);
-        localStorage.setItem("BearerToken", json.access_token);
+        if (code) {
+          localStorage.setItem("BearerToken", json.access_token);
 
-        dispatch({ type: GET_ACCESS_KEY });
+          dispatch({ type: GET_ACCESS_KEY });
+        } else {
+          window.location.assign(authenticationUrl);
+        }
       });
   };
 }
