@@ -1,4 +1,4 @@
-import { GET_ACCESS_KEY } from "../../types";
+import { GET_ACCESS_KEY } from "../../constants/auth";
 
 const initialState = {
   // isAuth: false,

@@ -1,7 +1,7 @@
 import { toJson } from "unsplash-js";
 import unsplash from "../../../api";
 
-import { GET_ACCESS_KEY } from "../../types";
+import { GET_ACCESS_KEY } from "../../constants/auth";
 
 const authenticationUrl = unsplash.auth.getAuthenticationUrl([
   "public",

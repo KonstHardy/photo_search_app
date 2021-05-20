@@ -1,4 +1,4 @@
-import { SHOW_LOADER, HIDE_LOADER } from "../../types";
+import { SHOW_LOADER, HIDE_LOADER } from "../../constants/loader";
 
 export function showLoader() {
   return {
