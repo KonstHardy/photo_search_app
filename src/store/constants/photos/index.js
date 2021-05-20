@@ -1,0 +1,4 @@
+export const SEARCH_PHOTOS = "SEARCH_PHOTOS";
+export const FETCH_PHOTOS = "FETCH_PHOTOS";
+
+export const CURRENT_PAGE = "CURRENT_PAGE";
