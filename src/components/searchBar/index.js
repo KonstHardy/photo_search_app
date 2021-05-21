@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./searchBar.css";
 
-import { searchPhotos, fetchPhotos } from "../../store/actions/photos";
+import { searchPhotos, fetchPhotos, setPage } from "../../store/actions/photos";
 import { showLoader, hideLoader } from "../../store/actions/loader";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const page = useSelector((state) => state.photos.currentPage);
+  console.log("--------> SearchBar currentPage", page);
 
   const dispatch = useDispatch();
 
@@ -15,18 +18,15 @@ const SearchBar = () => {
     e.preventDefault();
 
     dispatch(showLoader());
-    // setTimeout(() => {
-    dispatch(searchPhotos(searchQuery));
+    dispatch(searchPhotos(searchQuery, page));
+    dispatch(setPage(page)); // не меняется state
     dispatch(hideLoader());
-    // }, 3000);
   };
 
   useEffect(() => {
     dispatch(showLoader());
-    // setTimeout(() => {
     dispatch(fetchPhotos());
     dispatch(hideLoader());
-    // }, 3000);
   }, []);
 
   return (
