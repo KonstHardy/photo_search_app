@@ -11,19 +11,24 @@ import useScroll from "../../hooks/useScroll";
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
+  const scrollPosition = useScroll();
   const page = useSelector((state) => state.photos.currentPage);
-  console.log("--------> SearchBar currentPage", page);
 
   const dispatch = useDispatch();
 
-  const scrollPosition = useScroll();
+  console.log("--------> SearchBar (1) currentPage", page);
 
   useEffect(() => {
     if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
       console.log("I am at bottom");
+      console.log("--------> SearchBar (2) currentPage", page);
 
       dispatch(showLoader());
-      dispatch(searchPhotos(searchQuery, page));
+
+      searchQuery == ""
+        ? dispatch(fetchPhotos(page))
+        : dispatch(searchPhotos(searchQuery, page));
+
       dispatch(setPage(page));
       dispatch(hideLoader());
     }
@@ -34,7 +39,8 @@ const SearchBar = () => {
 
     dispatch(showLoader());
     dispatch(searchPhotos(searchQuery, page));
-    // dispatch(setPage(page));
+    dispatch(setPage(page));
+    console.log("--------> SearchBar (3) currentPage", page);
     dispatch(hideLoader());
   };
 
