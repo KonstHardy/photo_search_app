@@ -6,6 +6,8 @@ import "./searchBar.css";
 import { searchPhotos, fetchPhotos, setPage } from "../../store/actions/photos";
 import { showLoader, hideLoader } from "../../store/actions/loader";
 
+import useScroll from "../../hooks/useScroll";
+
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -14,20 +16,34 @@ const SearchBar = () => {
 
   const dispatch = useDispatch();
 
+  const scrollPosition = useScroll();
+
+  useEffect(() => {
+    if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
+      console.log("I am at bottom");
+
+      dispatch(showLoader());
+      dispatch(searchPhotos(searchQuery, page));
+      dispatch(setPage(page));
+      dispatch(hideLoader());
+    }
+  }, [scrollPosition]);
+
   const onSearchSubmit = (e) => {
     e.preventDefault();
 
     dispatch(showLoader());
     dispatch(searchPhotos(searchQuery, page));
-    dispatch(setPage(page)); // не меняется state
+    // dispatch(setPage(page));
     dispatch(hideLoader());
   };
 
-  useEffect(() => {
-    dispatch(showLoader());
-    dispatch(fetchPhotos());
-    dispatch(hideLoader());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(showLoader());
+  //   dispatch(fetchPhotos());
+  //   // dispatch(setPage(page));
+  //   dispatch(hideLoader());
+  // }, []);
 
   return (
     <form className="searchBar" onSubmit={onSearchSubmit}>
