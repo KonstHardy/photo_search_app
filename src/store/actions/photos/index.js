@@ -25,11 +25,11 @@ export function searchPhotos(searchQuery, page) {
   };
 }
 
-export function fetchPhotos() {
+export function fetchPhotos(page) {
   return async (dispatch) => {
     try {
       await unsplash.search
-        .photos(1, 11)
+        .photos(page, 11)
         .then(toJson)
         .then((response) => {
           console.log("FETCH_PHOTOS", response.results);
