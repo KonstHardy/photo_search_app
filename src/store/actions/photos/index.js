@@ -11,35 +11,33 @@ import {
 
 export function searchPhotos(searchQuery, page) {
   return async (dispatch) => {
-    await unsplash.search
-      .photos(searchQuery, page, 11)
-      .then(toJson)
-      .then((json) => {
-        console.log("SEARCH_PHOTOS", json);
-        dispatch({ type: SEARCH_PHOTOS, payload: json.results });
-      });
-    // .catch((error) => {
-    //   console.log("Encountered an error with fetching and parsing data", {
-    //     error,
-    //   });
-    // });
+    try {
+      await unsplash.search
+        .photos(searchQuery, page, 11)
+        .then(toJson)
+        .then((json) => {
+          console.log("SEARCH_PHOTOS", json);
+          dispatch({ type: SEARCH_PHOTOS, payload: json.results });
+        });
+    } catch (err) {
+      console.log("Encountered an error with Searching photos", err);
+    }
   };
 }
 
 export function fetchPhotos() {
   return async (dispatch) => {
-    await unsplash.search
-      .photos(1, 11)
-      .then(toJson)
-      .then((response) => {
-        console.log("FETCH_PHOTOS", response.results);
-        dispatch({ type: FETCH_PHOTOS, payload: response.results });
-      });
-    // .catch((error) => {
-    //   console.log("Encountered an error with fetching and parsing data", {
-    //     error,
-    //   });
-    // });
+    try {
+      await unsplash.search
+        .photos(1, 11)
+        .then(toJson)
+        .then((response) => {
+          console.log("FETCH_PHOTOS", response.results);
+          dispatch({ type: FETCH_PHOTOS, payload: response.results });
+        });
+    } catch (err) {
+      console.log("Encountered an error with Fetching photos", err);
+    }
   };
 }
 
