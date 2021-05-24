@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "./searchBar.css";
 
-import { searchPhotos, fetchPhotos, setPage } from "../../store/actions/photos";
-import { showLoader, hideLoader } from "../../store/actions/loader";
-
 import useScroll from "../../hooks/useScroll";
+
+import { showLoader, hideLoader } from "../../store/actions/loader";
+import { fetchSearch, fetchRandom, setPage } from "../../store/actions/photos";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,14 +20,12 @@ const SearchBar = () => {
 
   useEffect(() => {
     if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
-      console.log("I am at bottom");
       console.log("--------> SearchBar (2) currentPage", page);
 
       dispatch(showLoader());
-
       searchQuery == ""
-        ? dispatch(fetchPhotos(page))
-        : dispatch(searchPhotos(searchQuery, page));
+        ? dispatch(fetchRandom(page))
+        : dispatch(fetchSearch(searchQuery, page));
 
       dispatch(setPage(page));
       dispatch(hideLoader());
@@ -36,17 +34,17 @@ const SearchBar = () => {
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
+    console.log("--------> SearchBar (3) currentPage", page);
 
     dispatch(showLoader());
-    dispatch(searchPhotos(searchQuery, page));
+    dispatch(fetchSearch(searchQuery, page));
     dispatch(setPage(page));
-    console.log("--------> SearchBar (3) currentPage", page);
     dispatch(hideLoader());
   };
 
   // useEffect(() => {
   //   dispatch(showLoader());
-  //   dispatch(fetchPhotos());
+  //   dispatch(fetchRandom());
   //   // dispatch(setPage(page));
   //   dispatch(hideLoader());
   // }, []);
