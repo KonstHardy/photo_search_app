@@ -2,6 +2,3 @@ export const SEARCH_PHOTO = "SEARCH_PHOTO";
 
 export const FETCH_SEARCH = "FETCH_SEARCH";
 export const FETCH_RANDOM = "FETCH_RANDOM";
-
-export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-export const RESET_CURRENT_PAGE = "RESET_CURRENT_PAGE";
