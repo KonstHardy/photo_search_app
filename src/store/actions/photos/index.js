@@ -5,11 +5,7 @@ import {
   SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
-  SET_CURRENT_PAGE,
-  RESET_CURRENT_PAGE,
 } from "../../constants/photos";
-
-let pageCounter = 1;
 
 export function searchPhoto(searchQuery, page) {
   return async (dispatch) => {
@@ -56,19 +52,5 @@ export function fetchRandom(page) {
     } catch (err) {
       console.log("Encountered an error with FETCH_RANDOM", err);
     }
-  };
-}
-
-export function setCurrentPage(page) {
-  return {
-    type: SET_CURRENT_PAGE,
-    payload: page + 1,
-  };
-}
-
-export function resetCurrentPage() {
-  return {
-    type: RESET_CURRENT_PAGE,
-    payload: pageCounter,
   };
 }
