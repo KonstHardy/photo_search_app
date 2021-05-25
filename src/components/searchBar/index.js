@@ -10,14 +10,16 @@ import {
   searchPhoto,
   fetchSearch,
   fetchRandom,
+} from "../../store/actions/photos";
+import {
   setCurrentPage,
   resetCurrentPage,
-} from "../../store/actions/photos";
+} from "../../store/actions/counterPage";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
 
-  const page = useSelector((state) => state.photos.currentPage);
+  const page = useSelector((state) => state.counter.currentPage);
   const scrollPosition = useScroll();
   const [searchQuery, setSearchQuery] = useState("");
 
