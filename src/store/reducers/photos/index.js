@@ -1,4 +1,5 @@
 import {
+  SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
   CURRENT_PAGE,
@@ -11,6 +12,12 @@ const initialState = {
 
 const photoReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SEARCH_PHOTO:
+      return {
+        ...state,
+        photos: action.payload,
+      };
+
     case FETCH_SEARCH:
       // return {
       //   ...state,
