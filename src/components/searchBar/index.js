@@ -10,8 +10,8 @@ import {
   searchPhoto,
   fetchSearch,
   fetchRandom,
-  setPage,
-  resetPage,
+  setCurrentPage,
+  resetCurrentPage,
 } from "../../store/actions/photos";
 
 const SearchBar = () => {
@@ -32,7 +32,7 @@ const SearchBar = () => {
         ? dispatch(fetchRandom(page))
         : dispatch(fetchSearch(searchQuery, page));
 
-      dispatch(setPage(page));
+      dispatch(setCurrentPage(page));
       dispatch(hideLoader());
     }
   }, [scrollPosition]);
@@ -42,9 +42,9 @@ const SearchBar = () => {
 
     console.log("--------> SearchBar (2) currentPage", page);
     dispatch(showLoader());
-    dispatch(resetPage());
+    dispatch(resetCurrentPage());
     dispatch(searchPhoto(searchQuery, page));
-    // dispatch(setPage(page));
+    // dispatch(setCurrentPage(page));
     dispatch(hideLoader());
   };
 

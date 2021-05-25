@@ -2,7 +2,7 @@ import {
   SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
-  CURRENT_PAGE,
+  SET_CURRENT_PAGE,
   RESET_CURRENT_PAGE,
 } from "../../constants/photos";
 
@@ -30,7 +30,7 @@ const photoReducer = (state = initialState, action) => {
       // return { ...state, photos: action.payload };
       return { ...state, photos: [...state.photos, ...action.payload] };
 
-    case CURRENT_PAGE:
+    case SET_CURRENT_PAGE:
       return {
         ...state,
         // currentPage: state.currentPage + 1,

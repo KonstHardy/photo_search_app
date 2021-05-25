@@ -5,7 +5,7 @@ import {
   SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
-  CURRENT_PAGE,
+  SET_CURRENT_PAGE,
   RESET_CURRENT_PAGE,
 } from "../../constants/photos";
 
@@ -59,14 +59,14 @@ export function fetchRandom(page) {
   };
 }
 
-export function setPage(page) {
+export function setCurrentPage(page) {
   return {
-    type: CURRENT_PAGE,
+    type: SET_CURRENT_PAGE,
     payload: page + 1,
   };
 }
 
-export function resetPage() {
+export function resetCurrentPage() {
   return {
     type: RESET_CURRENT_PAGE,
     payload: pageCounter,
