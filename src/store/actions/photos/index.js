@@ -41,9 +41,10 @@ export function fetchRandom(page) {
   };
 }
 
-export function setPage() {
+export function setPage(page) {
   return {
     type: CURRENT_PAGE,
+    payload: page + 1,
   };
 }
 

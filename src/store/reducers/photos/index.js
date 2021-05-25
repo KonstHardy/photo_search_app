@@ -25,8 +25,8 @@ const photoReducer = (state = initialState, action) => {
     case CURRENT_PAGE:
       return {
         ...state,
-        currentPage: state.currentPage + 1,
-        // currentPage: state.currentPage,
+        // currentPage: state.currentPage + 1,
+        currentPage: action.payload,
       };
 
     default:
