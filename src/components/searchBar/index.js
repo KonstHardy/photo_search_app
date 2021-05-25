@@ -11,6 +11,7 @@ import {
   fetchSearch,
   fetchRandom,
   setPage,
+  resetPage,
 } from "../../store/actions/photos";
 
 const SearchBar = () => {
@@ -41,8 +42,9 @@ const SearchBar = () => {
 
     console.log("--------> SearchBar (2) currentPage", page);
     dispatch(showLoader());
+    dispatch(resetPage());
     dispatch(searchPhoto(searchQuery, page));
-    dispatch(setPage(page));
+    // dispatch(setPage(page));
     dispatch(hideLoader());
   };
 

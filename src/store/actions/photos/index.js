@@ -6,9 +6,10 @@ import {
   FETCH_SEARCH,
   FETCH_RANDOM,
   CURRENT_PAGE,
+  RESET_CURRENT_PAGE,
 } from "../../constants/photos";
 
-// let pageCounter = 1;
+let pageCounter = 1;
 
 export function searchPhoto(searchQuery, page) {
   return async (dispatch) => {
@@ -65,9 +66,9 @@ export function setPage(page) {
   };
 }
 
-// export function setPage(page) {
-//   return {
-//     type: CURRENT_PAGE,
-//     payload: page++,
-//   };
-// }
+export function resetPage() {
+  return {
+    type: RESET_CURRENT_PAGE,
+    payload: pageCounter,
+  };
+}

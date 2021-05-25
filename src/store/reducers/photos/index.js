@@ -3,6 +3,7 @@ import {
   FETCH_SEARCH,
   FETCH_RANDOM,
   CURRENT_PAGE,
+  RESET_CURRENT_PAGE,
 } from "../../constants/photos";
 
 const initialState = {
@@ -33,6 +34,12 @@ const photoReducer = (state = initialState, action) => {
       return {
         ...state,
         // currentPage: state.currentPage + 1,
+        currentPage: action.payload,
+      };
+
+    case RESET_CURRENT_PAGE:
+      return {
+        ...state,
         currentPage: action.payload,
       };
 
