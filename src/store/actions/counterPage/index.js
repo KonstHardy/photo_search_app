@@ -15,6 +15,6 @@ export function setCurrentPage(page) {
 export function resetCurrentPage() {
   return {
     type: RESET_CURRENT_PAGE,
-    payload: pageCounter,
+    payload: pageCounter + 1,
   };
 }
