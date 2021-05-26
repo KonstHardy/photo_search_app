@@ -7,11 +7,11 @@ import {
   FETCH_RANDOM,
 } from "../../constants/photos";
 
-export function searchPhoto(searchQuery, page) {
+export function searchPhoto(searchQuery) {
   return async (dispatch) => {
     try {
       await unsplash.search
-        .photos(searchQuery, page, 11)
+        .photos(searchQuery, 1, 11)
         .then(toJson)
         .then((json) => {
           console.log("SEARCH_PHOTO", json);
