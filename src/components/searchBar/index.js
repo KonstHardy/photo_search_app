@@ -23,32 +23,24 @@ const SearchBar = () => {
   const scrollPosition = useScroll();
   const [searchQuery, setSearchQuery] = useState("");
 
-  console.log("--------> SearchBar (1) currentPage", page);
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
+    dispatch(showLoader());
+    dispatch(resetCurrentPage());
+    dispatch(searchPhoto(searchQuery));
+    dispatch(hideLoader());
+  };
 
   useEffect(() => {
     if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
       dispatch(showLoader());
-
-      console.log("--------> SearchBar (3) currentPage", page);
       searchQuery == ""
         ? dispatch(fetchRandom(page))
         : dispatch(fetchSearch(searchQuery, page));
-
-      dispatch(setCurrentPage(page));
       dispatch(hideLoader());
+      dispatch(setCurrentPage(page));
     }
   }, [scrollPosition]);
-
-  const onSearchSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("--------> SearchBar (2) currentPage", page);
-    dispatch(showLoader());
-    dispatch(resetCurrentPage());
-    dispatch(searchPhoto(searchQuery, page));
-    // dispatch(setCurrentPage(page));
-    dispatch(hideLoader());
-  };
 
   return (
     <form className="searchBar" onSubmit={onSearchSubmit}>
