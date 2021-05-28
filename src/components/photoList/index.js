@@ -10,10 +10,6 @@ const PhotoList = () => {
   const photos = useSelector((state) => state.photos.photos);
   const loading = useSelector((state) => state.loader.loading);
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div className="photoList">
       <div className="wrapper photoList__wrapper">
@@ -21,6 +17,7 @@ const PhotoList = () => {
           <PhotoCard photo={photo} key={photo.id} />
         ))}
       </div>
+      {loading ? <Loader /> : null}
     </div>
   );
 };
