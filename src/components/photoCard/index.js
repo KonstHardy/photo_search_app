@@ -3,7 +3,6 @@ import "./photoCard.css";
 
 const PhotoCard = (props) => {
   const { photo } = props;
-  // console.log(photo);
 
   return (
     <div className="photoCard">
