@@ -19,13 +19,21 @@
 .photoCard__image:hover {
   box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.45);
 }
-.photoCard__authorName {
+.photoCard__author {
   position: absolute;
+  display: flex;
+  align-items: center;
   width: 100%;
   bottom: 0;
   padding: 15px;
   border-radius: 0 0 10px 10px;
+  background-color: rgba(73, 29, 29, 0.45);
+}
+.author__avatar {
+  border-radius: 50%;
+}
+.author__name {
   font-weight: 300;
   color: #f0f8ff;
-  background-color: rgba(73, 29, 29, 0.45);
+  margin-left: 10px;
 }
