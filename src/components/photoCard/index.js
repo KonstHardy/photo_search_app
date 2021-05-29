@@ -17,9 +17,7 @@ const PhotoCard = (props) => {
           alt={photo.user.name}
           src={photo.user.profile_image.small}
         />
-        <p className="author__name">
-          {photo.user.first_name} {photo.user.last_name}
-        </p>
+        <p className="author__name">{photo.user.name}</p>
       </div>
     </div>
   );
