@@ -1,13 +1,15 @@
 .photoCard {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .photoCard:nth-child(3n + 1) {
   grid-row-end: span 2;
 }
 .photoCard:nth-child(5n) {
   grid-row-end: span 2;
+}
+.photoCard:hover {
 }
 .photoCard__image {
   display: flex;
@@ -25,19 +27,37 @@
   display: flex;
   align-items: center;
   width: 100%;
-  bottom: -50px;
+  /* bottom: -50px; */
+  bottom: 0;
   padding: 15px 12px 10px;
   background: linear-gradient(0deg, #000, transparent);
-  transition: 0.5 linear bottom;
+  transition: bottom 0.2s linear;
 }
 .photoCard:hover .photoCard__author {
   bottom: 0;
 }
 .author__avatar {
   border-radius: 50%;
+  cursor: pointer;
+}
+.author__avatar:hover {
+  transform: scale(1.05);
 }
 .author__name {
-  font-weight: 300;
-  color: #f0f8ff;
+  position: relative;
+  display: inline-block;
   margin-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(to right, #1cb1da 50%, #fff 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  cursor: pointer;
+  transition: background-position 0.3s ease;
+}
+.author__name:hover {
+  background-position: 0 100%;
 }
