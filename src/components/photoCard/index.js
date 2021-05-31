@@ -5,6 +5,8 @@ import IconLike from "../iconLike";
 const PhotoCard = (props) => {
   const { photo } = props;
 
+  console.log("photo.id", photo.id);
+
   return (
     <div className="photoCard">
       <img
@@ -28,7 +30,7 @@ const PhotoCard = (props) => {
         </a>
         <div className="content__like">
           <span className="like__counter">{photo.likes}</span>
-          <IconLike />
+          <IconLike photoId={photo.id} />
         </div>
       </div>
     </div>
