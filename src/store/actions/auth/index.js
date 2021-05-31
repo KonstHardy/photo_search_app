@@ -13,23 +13,23 @@ const authenticationUrl = unsplash.auth.getAuthenticationUrl([
 
 const code = window.location.search.split("code=")[1];
 
-// window.location.assign(authenticationUrl);
-
 export function loginAction() {
   return async (dispatch) => {
-    await unsplash.auth
-      .userAuthentication(code)
-      .then(toJson)
-      .then((json) => {
-        unsplash.auth.setBearerToken(json.access_token);
-
-        if (code) {
-          localStorage.setItem("BearerToken", json.access_token);
-
-          dispatch({ type: GET_ACCESS_KEY });
-        } else {
-          window.location.assign(authenticationUrl);
-        }
-      });
+    try {
+      await unsplash.auth
+        .userAuthentication(code)
+        .then(toJson)
+        .then((json) => {
+          unsplash.auth.setBearerToken(json.access_token);
+          if (code) {
+            localStorage.setItem("BearerToken", json.access_token);
+            dispatch({ type: GET_ACCESS_KEY });
+          } else {
+            window.location.assign(authenticationUrl);
+          }
+        });
+    } catch (err) {
+      console.log("Encountered an error with Authentication", err);
+    }
   };
 }
