@@ -1,6 +1,6 @@
 import React from "react";
-import IconLike from "../iconLike";
 import "./photoCard.css";
+import IconLike from "../iconLike";
 
 const PhotoCard = (props) => {
   const { photo } = props;
@@ -27,7 +27,7 @@ const PhotoCard = (props) => {
           <p className="author__name">{photo.user.name}</p>
         </a>
         <div className="content__like">
-          <spam className="like__counter">{photo.likes}</spam>
+          <span className="like__counter">{photo.likes}</span>
           <IconLike />
         </div>
       </div>
