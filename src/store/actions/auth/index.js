@@ -9,6 +9,7 @@ const authenticationUrl = unsplash.auth.getAuthenticationUrl([
   "write_user",
   "read_photos",
   "write_photos",
+  "write_likes",
 ]);
 
 const code = window.location.search.split("code=")[1];
