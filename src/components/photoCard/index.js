@@ -1,4 +1,5 @@
 import React from "react";
+import IconLike from "../iconLike";
 import "./photoCard.css";
 
 const PhotoCard = (props) => {
@@ -25,6 +26,10 @@ const PhotoCard = (props) => {
           />
           <p className="author__name">{photo.user.name}</p>
         </a>
+        <div className="author__like">
+          <spam className="like__counter">{photo.likes}</spam>
+          <IconLike />
+        </div>
       </div>
     </div>
   );

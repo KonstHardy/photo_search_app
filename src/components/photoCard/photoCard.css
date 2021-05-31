@@ -24,6 +24,9 @@
 }
 .photoCard__author {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   /* bottom: -50px; */
   bottom: 0;
@@ -62,4 +65,17 @@
 }
 .author__name:hover {
   background-position: 0 100%;
+}
+.author__like {
+  display: flex;
+  align-items: center;
+}
+.like__counter {
+  margin-right: 5px;
+  margin-bottom: 2px;
+  font-weight: 500;
+  color: rgb(255 255 255 / 60%);
+}
+.like__icon {
+  cursor: pointer;
 }
