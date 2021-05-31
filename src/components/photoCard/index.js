@@ -12,12 +12,19 @@ const PhotoCard = (props) => {
         src={photo.urls.regular}
       />
       <div className="photoCard__author">
-        <img
-          className="author__avatar"
-          alt={photo.user.name}
-          src={photo.user.profile_image.small}
-        />
-        <p className="author__name">{photo.user.name}</p>
+        <a
+          className="author__link"
+          href={photo.user.links.html}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            className="author__avatar"
+            alt={photo.user.name}
+            src={photo.user.profile_image.small}
+          />
+          <p className="author__name">{photo.user.name}</p>
+        </a>
       </div>
     </div>
   );

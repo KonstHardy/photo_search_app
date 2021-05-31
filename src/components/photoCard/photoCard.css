@@ -24,8 +24,6 @@
 }
 .photoCard__author {
   position: absolute;
-  display: flex;
-  align-items: center;
   width: 100%;
   /* bottom: -50px; */
   bottom: 0;
@@ -35,6 +33,10 @@
 }
 .photoCard:hover .photoCard__author {
   bottom: 0;
+}
+.author__link {
+  display: flex;
+  align-items: center;
 }
 .author__avatar {
   border-radius: 50%;
