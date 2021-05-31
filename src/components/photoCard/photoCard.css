@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  transition: transform 0.2s linear, box-shadow 0.15s linear;
 }
 .photoCard:nth-child(3n + 1) {
   grid-row-end: span 2;
@@ -10,6 +11,8 @@
   grid-row-end: span 2;
 }
 .photoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 50%);
 }
 .photoCard__image {
   display: flex;
@@ -17,10 +20,7 @@
   height: 100%;
   object-fit: cover;
   box-shadow: 1px 3px 13px 0 rgba(93, 93, 93, 0.75);
-  transition: 0.4s ease box-shadow;
-}
-.photoCard__image:hover {
-  box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.45);
+  transition: box-shadow 0.4s ease;
 }
 .photoCard__content {
   position: absolute;
@@ -31,7 +31,7 @@
   bottom: -50px;
   padding: 15px 12px 10px;
   background: linear-gradient(0deg, #000, transparent);
-  transition: bottom 0.35s ease;
+  transition: bottom 0.3s ease;
 }
 .photoCard:hover .photoCard__content {
   bottom: 0;
