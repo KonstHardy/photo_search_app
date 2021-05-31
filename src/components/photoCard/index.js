@@ -12,9 +12,9 @@ const PhotoCard = (props) => {
         alt={photo.alt_description}
         src={photo.urls.regular}
       />
-      <div className="photoCard__author">
+      <div className="photoCard__content">
         <a
-          className="author__link"
+          className="content__author"
           href={photo.user.links.html}
           target="_blank"
           rel="noreferrer"
@@ -26,7 +26,7 @@ const PhotoCard = (props) => {
           />
           <p className="author__name">{photo.user.name}</p>
         </a>
-        <div className="author__like">
+        <div className="content__like">
           <spam className="like__counter">{photo.likes}</spam>
           <IconLike />
         </div>
