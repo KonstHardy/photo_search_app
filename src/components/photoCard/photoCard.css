@@ -86,10 +86,17 @@
 }
 .like__counter {
   margin-right: 5px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   font-weight: 500;
   color: rgb(255 255 255 / 60%);
 }
 .like__icon {
   cursor: pointer;
+  width: 18px;
+  height: 18px;
+  fill: rgb(255 255 255 / 60%);
+}
+.like__icon:hover {
+  fill: #f15151;
+  stroke: #f15151;
 }
