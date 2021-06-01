@@ -1,0 +1,12 @@
+.like__icon {
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+  fill: rgb(255 255 255 / 65%);
+  transition: transform 0.1s ease;
+}
+.like__icon:hover {
+  fill: #f15151;
+  stroke: #f15151;
+  transform: translateY(-1px);
+}

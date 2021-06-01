@@ -1,4 +1,7 @@
 import { useDispatch } from "react-redux";
+
+import "./iconLike.css";
+
 import { addLike } from "../../store/actions/like";
 
 function IconLike(photoId) {
