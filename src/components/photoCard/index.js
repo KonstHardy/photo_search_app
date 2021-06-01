@@ -9,12 +9,15 @@ const PhotoCard = (props) => {
 
   return (
     <div className="photoCard">
+      <div className="photoCard__content photoCard__content-top">
+        <time className="content__date">{photo.created_at}</time>
+      </div>
       <img
         className="photoCard__image"
         alt={photo.alt_description}
         src={photo.urls.regular}
       />
-      <div className="photoCard__content">
+      <div className="photoCard__content photoCard__content-bottom">
         <a
           className="content__author"
           href={photo.user.links.html}
