@@ -1,5 +1,7 @@
 import React from "react";
+
 import "./photoCard.css";
+
 import IconLike from "../iconLike";
 
 const PhotoCard = (props) => {
