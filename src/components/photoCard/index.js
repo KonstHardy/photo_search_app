@@ -7,12 +7,15 @@ import IconLike from "../iconLike";
 const PhotoCard = (props) => {
   const { photo } = props;
 
+  console.log("photo.id", photo);
   console.log("photo.id", photo.id);
 
   return (
     <div className="photoCard">
       <div className="photoCard__content photoCard__content-top">
-        <time className="content__date">{photo.created_at}</time>
+        <time className="content__date">
+          {new Date(photo.created_at).toLocaleString()}
+        </time>
       </div>
       <img
         className="photoCard__image"
