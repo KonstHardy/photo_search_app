@@ -2,17 +2,23 @@ import { useDispatch } from "react-redux";
 
 import "./iconLike.css";
 
-import { addLike } from "../../store/actions/like";
+import { addLike, removeLike } from "../../store/actions/like";
 
-function IconLike(photoId) {
+function IconLike(props) {
+  const { photoId, photoLike } = props;
+
   const dispatch = useDispatch();
+
+  // console.log(photoLike);
 
   return (
     <svg
-      className="like__icon"
+      // className="like__icon"
+      className={photoLike ? "like__icon-action" : "like__icon"}
       viewBox="0 0 16 16"
       onClick={() => {
         dispatch(addLike(photoId));
+        // dispatch(removeLike(photoId));
       }}
     >
       <path
