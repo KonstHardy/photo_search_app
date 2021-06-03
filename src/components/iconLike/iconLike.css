@@ -7,17 +7,16 @@
 }
 .like__icon:hover {
   fill: #eb3636;
-  stroke: #eb3636;
   transform: translateY(-1px);
 }
 .like__icon-action {
   cursor: pointer;
   width: 17px;
   height: 17px;
-  fill: #f15151;
-  stroke: #f15151;
+  fill: #df3535;
+  transition: transform 0.1s ease;
 }
 .like__icon-action:hover {
-  fill: rgb(255 255 255 / 65%);
-  stroke: none;
+  fill: #878282;
+  transform: translateY(-1px);
 }
