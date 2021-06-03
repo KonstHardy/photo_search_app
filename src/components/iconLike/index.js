@@ -9,13 +9,11 @@ function IconLike(props) {
 
   const dispatch = useDispatch();
 
-  // console.log(photoLike);
-
   return (
     <svg
-      // className="like__icon"
       className={photoLike ? "like__icon-action" : "like__icon"}
-      viewBox="0 0 16 16"
+      width={17}
+      height={17}
       onClick={() => {
         dispatch(addLike(photoId));
         // dispatch(removeLike(photoId));
