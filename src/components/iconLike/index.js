@@ -15,7 +15,13 @@ function IconLike(props) {
       width={17}
       height={17}
       onClick={() => {
-        dispatch(addLike(photoId));
+        {
+          photoLike
+            ? dispatch(removeLike(photoId))
+            : dispatch(addLike(photoId));
+        }
+
+        // dispatch(addLike(photoId));
         // dispatch(removeLike(photoId));
       }}
     >
