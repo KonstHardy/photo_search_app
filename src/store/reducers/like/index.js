@@ -9,6 +9,14 @@ const likesReducer = (state = initialState, action) => {
     case ADD_LIKE:
       return {
         ...state,
+        // like: true,
+        like: action.payload,
+      };
+
+    case REMOVE_LIKE:
+      return {
+        ...state,
+        // like: false,
         like: action.payload,
       };
 
