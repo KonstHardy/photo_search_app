@@ -5,7 +5,6 @@ import "./searchBar.css";
 
 import useScroll from "../../hooks/useScroll";
 
-import { showLoader, hideLoader } from "../../store/actions/loader";
 import {
   searchPhoto,
   fetchSearch,
@@ -25,19 +24,15 @@ const SearchBar = () => {
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
-    dispatch(showLoader());
     dispatch(resetCurrentPage());
     dispatch(searchPhoto(searchQuery));
-    dispatch(hideLoader());
   };
 
   useEffect(() => {
     if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
-      dispatch(showLoader());
       searchQuery == ""
         ? dispatch(fetchRandom(page))
         : dispatch(fetchSearch(searchQuery, page));
-      dispatch(hideLoader());
       dispatch(setCurrentPage(page));
     }
   }, [scrollPosition]);
