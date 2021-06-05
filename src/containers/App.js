@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
-  // Switch,
-  // Route,
   // Link,
   // useRouteMatch,
   // useParams
@@ -35,24 +34,22 @@ function App() {
 
   return (
     <Router>
-      <Route path="/">
-        HOME PAGE
-        {/* <Home /> */}
-      </Route>
-      <Route path="/gallery">
-        <Search />
-        <PhotoList />
-        {/* <Gallery /> */}
-      </Route>
-      <Route path="/login">
-        Login PAGE
-        {/* <About /> */}
-      </Route>
+      <Switch>
+        <Route path="/" exact={true}>
+          HOME PAGE
+          {/* <Home /> */}
+        </Route>
+        <Route path="/gallery">
+          <Search />
+          <PhotoList />
+          {/* <Gallery /> */}
+        </Route>
+        <Route path="/login">
+          Login PAGE
+          {/* <About /> */}
+        </Route>
+      </Switch>
     </Router>
-    // <>
-    //   <Search />
-    //   <PhotoList />
-    // </>
   );
 }
 
