@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "./photoList.css";
 
 import PhotoCard from "../photoCard";
+import NotFound from "../notFound";
 import Loader from "../loader";
 
 const PhotoList = () => {
@@ -12,11 +13,16 @@ const PhotoList = () => {
 
   return (
     <div className="photoList">
-      <div className="wrapper photoList__wrapper">
-        {photos.map((photo) => (
-          <PhotoCard photo={photo} key={photo.id} />
-        ))}
-      </div>
+      {photos.length > 0 ? (
+        <div className="wrapper photoList__wrapper">
+          {photos.map((photo) => (
+            <PhotoCard photo={photo} key={photo.id} />
+          ))}
+        </div>
+      ) : (
+        <NotFound />
+      )}
+
       {loading ? <Loader /> : null}
     </div>
   );
