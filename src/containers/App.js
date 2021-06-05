@@ -1,4 +1,14 @@
 import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  // Switch,
+  // Route,
+  // Link,
+  // useRouteMatch,
+  // useParams
+} from "react-router-dom";
+
 import { useSelector, useDispatch } from "react-redux";
 
 import "./App.css";
@@ -15,19 +25,34 @@ function App() {
 
   console.log("isAuth", isAuth);
 
-  useEffect(() => {
-    dispatch(loginAction());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(loginAction());
+  // }, []);
 
-  if (!isAuth) {
-    return <Loader />;
-  }
+  // if (!isAuth) {
+  //   return <Loader />;
+  // }
 
   return (
-    <>
-      <Search />
-      <PhotoList />
-    </>
+    <Router>
+      <Route path="/">
+        HOME PAGE
+        {/* <Home /> */}
+      </Route>
+      <Route path="/gallery">
+        <Search />
+        <PhotoList />
+        {/* <Gallery /> */}
+      </Route>
+      <Route path="/login">
+        Login PAGE
+        {/* <About /> */}
+      </Route>
+    </Router>
+    // <>
+    //   <Search />
+    //   <PhotoList />
+    // </>
   );
 }
 
