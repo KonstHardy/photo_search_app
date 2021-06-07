@@ -19,6 +19,7 @@ import PhotoList from "../components/photoList";
 import { loginAction } from "../store/actions/auth";
 
 import Home from "../pages/home";
+import Login from "../pages/login";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -50,8 +51,7 @@ function App() {
           {/* <Gallery /> */}
         </Route>
         <Route path="/login">
-          Login PAGE
-          {/* <About /> */}
+          <Login />
         </Route>
       </Switch>
     </Router>
