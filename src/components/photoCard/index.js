@@ -3,11 +3,13 @@ import React from "react";
 import "./photoCard.css";
 
 import IconLike from "../iconLike";
+import IconDownload from "../iconDownload";
 
 const PhotoCard = (props) => {
   const { photo } = props;
 
-  // console.log("photo.id", photo);
+  // console.log("LIKES", photo.like);
+
   console.log("photo.id", photo.id);
   console.log("photo.liked_by_user", photo.liked_by_user);
 
@@ -17,6 +19,14 @@ const PhotoCard = (props) => {
         <time className="content__date">
           {new Date(photo.created_at).toLocaleString()}
         </time>
+        <a
+          className="content_download"
+          href={`${photo.links.download}?force=true`}
+          download
+          tabIndex="-1"
+        >
+          <IconDownload />
+        </a>
       </div>
       <img
         className="photoCard__image"
