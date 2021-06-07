@@ -18,6 +18,8 @@ import PhotoList from "../components/photoList";
 
 import { loginAction } from "../store/actions/auth";
 
+import Home from "../pages/home";
+
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
   const dispatch = useDispatch();
@@ -33,11 +35,14 @@ function App() {
   // }
 
   return (
+    // <>
+    //   <Search />
+    //   <PhotoList />
+    // </>
     <Router>
       <Switch>
         <Route path="/" exact={true}>
-          HOME PAGE
-          {/* <Home /> */}
+          <Home />
         </Route>
         <Route path="/gallery">
           <Search />
