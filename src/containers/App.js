@@ -12,14 +12,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "./App.css";
 
-import Loader from "../components/loader";
-import Search from "../components/search";
-import PhotoList from "../components/photoList";
+// import Loader from "../components/loader";
+// import Search from "../components/search";
+// import PhotoList from "../components/photoList";
 
 import { loginAction } from "../store/actions/auth";
 
 import Home from "../pages/home";
 import Login from "../pages/login";
+import Gallery from "../pages/gallery";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -36,19 +37,13 @@ function App() {
   // }
 
   return (
-    // <>
-    //   <Search />
-    //   <PhotoList />
-    // </>
     <Router>
       <Switch>
         <Route path="/" exact={true}>
           <Home />
         </Route>
         <Route path="/gallery">
-          <Search />
-          <PhotoList />
-          {/* <Gallery /> */}
+          <Gallery />
         </Route>
         <Route path="/login">
           <Login />
