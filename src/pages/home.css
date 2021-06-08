@@ -1,0 +1,26 @@
+.home__title {
+  padding-top: 6.5rem;
+  padding-bottom: 4.5rem;
+  background-color: #000;
+  color: #fff;
+}
+.home__wrapper {
+  max-width: 640px;
+}
+.home__text {
+  font-family: Calibri, sans-serif;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+.home__desc {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+.desc__wrapper {
+  max-width: 800px;
+}
+.desc__text {
+  font-size: 1.4rem;
+  line-height: 2.3rem;
+  text-align: center;
+}
