@@ -1,6 +1,6 @@
 .home__title {
   padding-top: 6.5rem;
-  padding-bottom: 4.5rem;
+  padding-bottom: 5rem;
   background-color: #000;
   color: #fff;
 }
@@ -13,14 +13,19 @@
   text-align: justify;
 }
 .home__desc {
-  padding-top: 6rem;
+  display: flex;
+  align-items: center;
+  height: 20rem;
+  padding-top: 3rem;
   padding-bottom: 3rem;
 }
 .desc__wrapper {
   max-width: 800px;
 }
 .desc__text {
-  font-size: 1.4rem;
-  line-height: 2.3rem;
   text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.3px;
+  color: #7c7c7c;
 }
