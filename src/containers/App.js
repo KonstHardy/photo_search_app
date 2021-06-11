@@ -18,9 +18,11 @@ import "./App.css";
 
 import { loginAction } from "../store/actions/auth";
 
-import Home from "../pages/home";
-import Login from "../pages/login";
+// import Home from "../pages/home";
 import Gallery from "../pages/gallery";
+import Login from "../pages/login";
+
+import routes from "../utils/routes";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -39,9 +41,14 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact={true}>
-          <Home />
-        </Route>
+        {routes.map((route) => (
+          <Route
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />
+        ))}
+
         <Route path="/gallery">
           <Gallery />
         </Route>
