@@ -1,0 +1,22 @@
+.header {
+  background-color: #000;
+}
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgb(255 255 255 / 50%);
+}
+.header__span {
+  display: flex;
+}
+.header__link {
+  font-size: 1.3rem;
+}
+.header__link-span {
+  margin-right: 1.5rem;
+}
+.header__link a {
+  color: #fff;
+}
