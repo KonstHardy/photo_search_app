@@ -16,11 +16,7 @@ import "./App.css";
 // import Search from "../components/search";
 // import PhotoList from "../components/photoList";
 
-import { loginAction } from "../store/actions/auth";
-
-// import Home from "../pages/home";
-import Gallery from "../pages/gallery";
-import Login from "../pages/login";
+// import { loginAction } from "../store/actions/auth";
 
 import routes from "../utils/routes";
 
@@ -48,13 +44,6 @@ function App() {
             component={route.component}
           />
         ))}
-
-        <Route path="/gallery">
-          <Gallery />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
       </Switch>
     </Router>
   );
