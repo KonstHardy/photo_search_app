@@ -2,7 +2,7 @@ import React from "react";
 
 import "./home.css";
 
-import SearchTitle from "../components/searchTitle";
+import SearchTitle from "../components/titlePage";
 
 const Home = () => {
   return (
@@ -19,7 +19,8 @@ const Home = () => {
       <div className="home__desc">
         <div className="wrapper desc__wrapper">
           <p className="desc__text">
-            To use application you need to log in.<br />
+            To use application you need to log in.
+            <br />
             If you don’t have an account yet, you can create one.
           </p>
         </div>

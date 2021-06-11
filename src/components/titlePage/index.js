@@ -1,14 +1,14 @@
 import React from "react";
-import "./searchTitle.css";
+import "./titlePage.css";
 
-const SearchTitle = () => {
+const TitlePage = () => {
   return (
     <>
-      <h1 className="search__title">Photo Gallery App</h1>
-      <p className="search__subtitle">
+      <h1 className="titlePage__title">Photo Gallery App</h1>
+      <p className="titlePage__subtitle">
         All Images provided by&nbsp;
         <a
-          className="search__subtitle-link"
+          className="titlePage__subtitle-link"
           href="https://unsplash.com/"
           target="_blank"
           rel="noreferrer"
@@ -20,4 +20,4 @@ const SearchTitle = () => {
   );
 };
 
-export default SearchTitle;
+export default TitlePage;

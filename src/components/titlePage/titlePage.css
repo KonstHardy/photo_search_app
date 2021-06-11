@@ -1,21 +1,21 @@
-.search__title {
+.titlePage__title {
   font-family: Calibri, sans-serif;
   font-size: 4.5rem;
   text-align: center;
   color: #fff;
 }
-.search__subtitle {
+.titlePage__subtitle {
   font-family: Calibri, sans-serif;
   font-size: 0.85rem;
   margin-bottom: 4.5rem;
   color: #ccc;
 }
-.search__subtitle::before {
+.titlePage__subtitle::before {
   content: "*";
   margin-right: 5px;
   margin-left: 15px;
 }
-.search__subtitle-link {
+.titlePage__subtitle-link {
   position: relative;
   display: inline-block;
   font-weight: 600;
@@ -27,10 +27,10 @@
   background-position: 100%;
   transition: background-position 0.4s ease;
 }
-.search__subtitle-link:hover {
+.titlePage__subtitle-link:hover {
   background-position: 0 100%;
 }
-.search__subtitle-link::after {
+.titlePage__subtitle-link::after {
   position: absolute;
   content: "";
   border-bottom: 1px solid #ccc;
@@ -39,7 +39,7 @@
   bottom: -2px;
   transition: width 0.3s ease-in-out;
 }
-.search__subtitle-link:hover::after,
-.search__subtitle-link:focus::after {
+.titlePage__subtitle-link:hover::after,
+.titlePage__subtitle-link:focus::after {
   width: 100%;
 }

@@ -2,14 +2,14 @@ import React from "react";
 
 import "./search.css";
 
-import SearchTitle from "./../searchTitle";
+import TitlePage from "../titlePage";
 import SearchBar from "./../searchBar";
 
 const Search = () => {
   return (
     <div className="search">
       <div className="wrapper search__wrapper">
-        <SearchTitle />
+        <TitlePage />
         <SearchBar />
       </div>
     </div>
