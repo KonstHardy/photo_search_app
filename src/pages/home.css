@@ -9,13 +9,15 @@
 }
 .home__text {
   font-family: Calibri, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
   text-align: justify;
 }
 .home__desc {
   display: flex;
   align-items: center;
-  height: 20rem;
+  height: 15rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -24,8 +26,8 @@
 }
 .desc__text {
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.3px;
-  color: #7c7c7c;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.5px;
+  color: #5f5b5b;
 }
