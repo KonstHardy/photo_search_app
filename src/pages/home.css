@@ -1,6 +1,6 @@
 .home__title {
-  padding-top: 6.5rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 7rem;
   background-color: #000;
   color: #fff;
 }
@@ -9,7 +9,8 @@
 }
 .home__text {
   font-family: Calibri, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
   line-height: 1.5rem;
   letter-spacing: 0.5px;
   text-align: justify;
@@ -27,7 +28,7 @@
 .desc__text {
   text-align: center;
   font-size: 1.3rem;
-  line-height: 2.3rem;
+  line-height: 2rem;
   letter-spacing: 0.5px;
-  color: #5f5b5b;
+  color: #222;
 }
