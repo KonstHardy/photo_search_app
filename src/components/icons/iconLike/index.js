@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 
 import "./iconLike.css";
 
-import { addLike, removeLike } from "../../store/actions/like";
+import { addLike, removeLike } from "../../../store/actions/like";
 
 function IconLike(props) {
   const { photoId, photoLike } = props;

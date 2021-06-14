@@ -2,8 +2,8 @@ import React from "react";
 
 import "./photoCard.css";
 
-import IconLike from "../iconLike";
-import IconDownload from "../iconDownload";
+import IconLike from "../icons/iconLike";
+import IconDownload from "../icons/iconDownload";
 
 const PhotoCard = (props) => {
   const { photo } = props;
