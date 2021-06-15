@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import "./header.css";
 
 const Header = () => {
+  const isAuth = useSelector((state) => state.auth.authentication);
+  console.log(isAuth);
+
   return (
     <nav className="header">
       <div className="wrapper header__wrapper">
@@ -17,7 +22,7 @@ const Header = () => {
             </li>
           </span>
           <li className="header__link">
-            <Link to="/login">Login</Link>
+            <Link to="/login">{isAuth ? "Logout" : "Login"}</Link>
           </li>
         </ul>
       </div>
