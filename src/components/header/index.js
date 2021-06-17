@@ -13,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    isAuth ? dispatch(logOut()) : console.log("Some text");
+    dispatch(logOut());
   };
 
   return (
@@ -30,9 +30,7 @@ const Header = () => {
           </span>
           <li className="header__link">
             {isAuth ? (
-              <button to="/" onClick={handleClick}>
-                Logout
-              </button>
+              <button onClick={handleClick}>Logout</button>
             ) : (
               <Link to="/login">Login</Link>
             )}
