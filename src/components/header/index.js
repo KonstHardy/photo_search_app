@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./header.css";
+
+import { logoutAction } from "../../store/actions/auth";
 
 const Header = () => {
   const isAuth = useSelector((state) => state.auth.authentication);
   console.log(isAuth);
+
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    isAuth ? dispatch(logoutAction()) : console.log("Some text");
+  };
 
   return (
     <nav className="header">
@@ -22,7 +29,14 @@ const Header = () => {
             </li>
           </span>
           <li className="header__link">
-            <Link to="/login">{isAuth ? "Logout" : "Login"}</Link>
+            {isAuth ? (
+              <button to="/" onClick={handleClick}>
+                Logout
+              </button>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
+            {/* <Link to="/login">{isAuth ? "Logout" : "Login"}</Link> */}
           </li>
         </ul>
       </div>
