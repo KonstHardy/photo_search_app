@@ -1,4 +1,4 @@
-import { GET_ACCESS_KEY } from "../../constants/auth";
+import { LOG_IN, LOG_OUT } from "../../constants/auth";
 
 const initialState = {
   authentication: false,
@@ -6,8 +6,12 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_ACCESS_KEY: {
+    case LOG_IN: {
       return { ...state, authentication: true };
+    }
+
+    case LOG_OUT: {
+      return { ...state, authentication: false };
     }
 
     default:

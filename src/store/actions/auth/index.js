@@ -1,7 +1,7 @@
 import { toJson } from "unsplash-js";
 import unsplash from "../../../api";
 
-import { GET_ACCESS_KEY } from "../../constants/auth";
+import { LOG_IN, LOG_OUT } from "../../constants/auth";
 
 const authenticationUrl = unsplash.auth.getAuthenticationUrl([
   "public",
@@ -24,7 +24,7 @@ export function loginAction() {
           unsplash.auth.setBearerToken(json.access_token);
           if (code) {
             localStorage.setItem("BearerToken", json.access_token);
-            dispatch({ type: GET_ACCESS_KEY });
+            dispatch({ type: LOG_IN });
           } else {
             window.location.assign(authenticationUrl);
           }
@@ -32,5 +32,12 @@ export function loginAction() {
     } catch (err) {
       console.log("Encountered an error with Authentication", err);
     }
+  };
+}
+
+export function logoutAction() {
+  return (dispatch) => {
+    localStorage.removeItem("BearerToken");
+    dispatch({ type: LOG_OUT });
   };
 }
