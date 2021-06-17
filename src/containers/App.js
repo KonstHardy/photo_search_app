@@ -16,7 +16,7 @@ import Header from "../components/header";
 import routes from "../utils/routes";
 
 // import Loader from "../components/loader";
-// import { logIn } from "../store/actions/auth";
+// import { loginAction } from "../store/actions/auth";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -25,7 +25,7 @@ function App() {
   console.log("isAuth", isAuth);
 
   // useEffect(() => {
-  //   dispatch(logIn());
+  //   dispatch(loginAction());
   // }, []);
 
   // if (!isAuth) {
@@ -36,8 +36,9 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        {routes.map((route) => (
+        {routes.map((route, index) => (
           <Route
+            key={index}
             path={route.path}
             exact={route.exact}
             component={route.component}
