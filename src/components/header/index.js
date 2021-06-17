@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "./header.css";
 
-import { logoutAction } from "../../store/actions/auth";
+import { logOut } from "../../store/actions/auth";
 
 const Header = () => {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -13,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    isAuth ? dispatch(logoutAction()) : console.log("Some text");
+    isAuth ? dispatch(logOut()) : console.log("Some text");
   };
 
   return (

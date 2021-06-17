@@ -16,7 +16,7 @@ import Header from "../components/header";
 import routes from "../utils/routes";
 
 // import Loader from "../components/loader";
-// import { loginAction } from "../store/actions/auth";
+// import { logIn } from "../store/actions/auth";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -25,7 +25,7 @@ function App() {
   console.log("isAuth", isAuth);
 
   // useEffect(() => {
-  //   dispatch(loginAction());
+  //   dispatch(logIn());
   // }, []);
 
   // if (!isAuth) {

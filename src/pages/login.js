@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import Loader from "../components/loader";
-import { loginAction } from "../store/actions/auth";
+
+import { logIn } from "../store/actions/auth";
 
 const Login = () => {
-  const isAuth = useSelector((state) => state.auth.authentication);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loginAction());
+    dispatch(logIn());
   }, []);
+
+  const isAuth = useSelector((state) => state.auth.authentication);
 
   if (!isAuth) {
     return <Loader />;

@@ -14,7 +14,7 @@ const authenticationUrl = unsplash.auth.getAuthenticationUrl([
 
 const code = window.location.search.split("code=")[1];
 
-export function loginAction() {
+export function logIn() {
   return async (dispatch) => {
     try {
       await unsplash.auth
@@ -35,7 +35,7 @@ export function loginAction() {
   };
 }
 
-export function logoutAction() {
+export function logOut() {
   return (dispatch) => {
     localStorage.removeItem("BearerToken");
     dispatch({ type: LOG_OUT });
