@@ -1,1 +1,2 @@
-export const GET_ACCESS_KEY = "GET_ACCESS_KEY";
+export const LOG_IN = "LOG_IN";
+export const LOG_OUT = "LOG_OUT";
