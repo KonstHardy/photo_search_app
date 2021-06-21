@@ -25,14 +25,14 @@ const SearchBar = () => {
   const onSearchSubmit = (e) => {
     e.preventDefault();
     dispatch(resetCurrentPage());
-    dispatch(searchPhoto(searchQuery));
+    dispatch(searchPhoto(searchQuery.trim()));
   };
 
   useEffect(() => {
     if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
-      searchQuery == ""
+      searchQuery === ""
         ? dispatch(fetchRandom(page))
-        : dispatch(fetchSearch(searchQuery, page));
+        : dispatch(fetchSearch(searchQuery.trim(), page));
       dispatch(setCurrentPage(page));
     }
   }, [scrollPosition]);
