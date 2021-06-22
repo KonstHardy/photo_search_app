@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import Loader from "../components/loader";
@@ -7,6 +7,7 @@ import Loader from "../components/loader";
 import { logIn } from "../store/actions/auth";
 
 const Login = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Login = () => {
   }
 
   if (isAuth) {
-    return <Redirect to="/" />;
+    history.replace("/gallery");
   }
 
   return <div className="wrapper"></div>;
