@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./header.css";
@@ -11,10 +11,11 @@ const Header = () => {
   console.log(isAuth);
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = () => {
+    history.replace("/");
     dispatch(logOut());
-    return <Redirect to="/" />;
   };
 
   return (
