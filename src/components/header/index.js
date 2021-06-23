@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./header.css";
@@ -14,6 +14,7 @@ const Header = () => {
 
   const handleClick = () => {
     dispatch(logOut());
+    return <Redirect to="/" />;
   };
 
   return (
