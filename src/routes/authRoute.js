@@ -8,6 +8,6 @@ export default function AuthRoute(props) {
   if (isAuth) {
     return <Route {...props} />;
   }
-  // return <Redirect to="/login" />;
-  return <Redirect to="/" />;
+
+  return <Redirect to="/login" />;
 }

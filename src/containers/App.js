@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import "./App.css";
 
 import Header from "../components/header";
-import routes from "../utils/routes";
-import AuthRoute from "../utils/authRoute";
+import routes from "../routes";
+import AuthRoute from "../routes/authRoute";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
