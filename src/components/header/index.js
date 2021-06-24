@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./header.css";
@@ -22,21 +22,29 @@ const Header = () => {
     <nav className="header">
       <div className="wrapper header__wrapper">
         <ul className="list header__list">
-          <span className="header__span">
-            <li className="header__link header__link-span">
-              <Link to="/">Home</Link>
+          <span className="header__left">
+            <li className="header__link header__link-left">
+              <NavLink to="/" exact={true} activeClassName="link__selected">
+                Home
+              </NavLink>
             </li>
             <li className="header__link header__link-span">
-              <Link to="/gallery">Gallery</Link>
+              <NavLink to="/gallery" activeClassName="link__selected">
+                Gallery
+              </NavLink>
             </li>
           </span>
           <li className="header__link">
             {isAuth ? (
-              <button onClick={handleClick}>Logout</button>
+              <button className="header__logout" onClick={handleClick}>
+                Logout
+              </button>
             ) : (
-              <Link to="/login">Login</Link>
+              <NavLink to="/login" activeClassName="link__selected">
+                Login
+              </NavLink>
             )}
-            {/* <Link to="/login">{isAuth ? "Logout" : "Login"}</Link> */}
+            {/* <NavLink to="/login">{isAuth ? "Logout" : "Login"}</NavLink> */}
           </li>
         </ul>
       </div>
