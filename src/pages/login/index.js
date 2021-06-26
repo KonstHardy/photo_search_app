@@ -2,9 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import Loader from "../components/loader";
+import Loader from "../../components/loader";
 
-import { logIn } from "../store/actions/auth";
+import { logIn } from "../../store/actions/auth";
 
 const Login = () => {
   const dispatch = useDispatch();

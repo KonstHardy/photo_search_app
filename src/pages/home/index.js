@@ -2,7 +2,7 @@ import React from "react";
 
 import "./home.css";
 
-import SearchTitle from "../components/titlePage";
+import SearchTitle from "../../components/titlePage";
 
 const Home = () => {
   return (
