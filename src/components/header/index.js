@@ -24,7 +24,7 @@ const Header = () => {
         <ul className="list header__list">
           <span className="header__left">
             <li className="header__link header__link-left">
-              <NavLink to="/" exact={true} activeClassName="link__selected">
+              <NavLink to="/" exact activeClassName="link__selected">
                 Home
               </NavLink>
             </li>
