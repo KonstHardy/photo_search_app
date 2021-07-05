@@ -44,7 +44,6 @@ const Header = () => {
                 Login
               </NavLink>
             )}
-            {/* <NavLink to="/login">{isAuth ? "Logout" : "Login"}</NavLink> */}
           </li>
         </ul>
       </div>
