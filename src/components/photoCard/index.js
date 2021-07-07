@@ -8,11 +8,6 @@ import IconDownload from "../icons/iconDownload";
 const PhotoCard = (props) => {
   const { photo } = props;
 
-  // console.log("LIKES", photo.like);
-
-  console.log("photo.id", photo.id);
-  console.log("photo.liked_by_user", photo.liked_by_user);
-
   return (
     <div className="photoCard">
       <div className="photoCard__content photoCard__content-top">

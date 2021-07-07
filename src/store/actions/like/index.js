@@ -4,8 +4,6 @@ import unsplash from "../../../api";
 import { ADD_LIKE, REMOVE_LIKE } from "../../constants/like";
 
 export function addLike(photoId) {
-  // console.log("photoId", photoId);
-
   return async (dispatch) => {
     try {
       await unsplash.photos
@@ -24,8 +22,6 @@ export function addLike(photoId) {
 }
 
 export function removeLike(photoId) {
-  // console.log("photoId", photoId);
-
   return async (dispatch) => {
     try {
       await unsplash.photos
