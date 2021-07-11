@@ -35,7 +35,7 @@ const SearchBar = () => {
         : dispatch(fetchSearch(searchQuery.trim(), page));
       dispatch(setCurrentPage(page));
     }
-  }, [scrollPosition]);
+  }, [scrollPosition]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <form className="searchBar" onSubmit={onSearchSubmit}>
