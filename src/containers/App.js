@@ -5,8 +5,10 @@ import { useSelector } from "react-redux";
 import "./App.css";
 
 import Header from "../components/header";
+
 import routes from "../routes";
 import AuthRoute from "../routes/authRoute";
+import PageNotFound from "../pages/pageNotFound";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -37,6 +39,10 @@ function App() {
             />
           );
         })}
+
+        <Route path="*">
+          <PageNotFound />
+        </Route>
       </Switch>
     </Router>
   );
