@@ -13,7 +13,7 @@ export function searchPhoto(searchQuery) {
   return async (dispatch) => {
     try {
       await unsplash.search
-        .photos(searchQuery, 1, 11)
+        .photos(searchQuery, 1, 10)
         .then(toJson)
         .then((json) => {
           console.log("SEARCH_PHOTO", json);
@@ -31,7 +31,7 @@ export function fetchSearch(searchQuery, page) {
   return async (dispatch) => {
     try {
       await unsplash.search
-        .photos(searchQuery, page, 11)
+        .photos(searchQuery, page, 10)
         .then(toJson)
         .then((json) => {
           console.log("FETCH_SEARCH", json);
@@ -49,7 +49,7 @@ export function fetchRandom(page) {
   return async (dispatch) => {
     try {
       await unsplash.search
-        .photos(page, 11)
+        .photos(page, 10)
         .then(toJson)
         .then((response) => {
           console.log("FETCH_RANDOM", response.results);
