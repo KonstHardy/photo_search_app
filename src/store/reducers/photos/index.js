@@ -10,6 +10,17 @@ const initialState = {
   photos: [],
 };
 
+function mergeByProp(arr1, arr2, prop) {
+  const map = new Map();
+
+  arr1.forEach((item) => map.set(item[prop], item));
+  arr2.forEach((item) =>
+    map.set(item[prop], { ...map.get(item[prop]), ...item })
+  );
+
+  return Array.from(map.values());
+}
+
 const photoReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_PHOTO:
@@ -22,7 +33,10 @@ const photoReducer = (state = initialState, action) => {
       return { ...state, photos: [...state.photos, ...action.payload] };
 
     case FETCH_RANDOM:
-      return { ...state, photos: [...state.photos, ...action.payload] };
+      return {
+        ...state,
+        photos: mergeByProp(state.photos, action.payload, "id"),
+      };
 
     case ADD_LIKE:
       return {
