@@ -2,12 +2,14 @@ import {
   SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
+  GET_PHOTO,
 } from "../../constants/photos";
 
 import { ADD_LIKE, REMOVE_LIKE } from "../../constants/like";
 
 const initialState = {
   photos: [],
+  photoPreview: null,
 };
 
 function mergeByProp(arr1, arr2, prop) {
@@ -36,6 +38,12 @@ const photoReducer = (state = initialState, action) => {
       return {
         ...state,
         photos: mergeByProp(state.photos, action.payload, "id"),
+      };
+
+    case GET_PHOTO:
+      return {
+        ...state,
+        photoPreview: action.payload,
       };
 
     case ADD_LIKE:

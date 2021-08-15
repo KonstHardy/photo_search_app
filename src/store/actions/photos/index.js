@@ -5,6 +5,7 @@ import {
   SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
+  GET_PHOTO,
 } from "../../constants/photos";
 
 import { showLoader, hideLoader } from "../loader";
@@ -59,6 +60,24 @@ export function fetchRandom(page) {
         });
     } catch (err) {
       console.log("Encountered an error with FETCH_RANDOM", err);
+    }
+  };
+}
+
+export function getPhotoById(id) {
+  return async (dispatch) => {
+    try {
+      await unsplash.photos
+        .getPhoto(id)
+        .then(toJson)
+        .then((response) => {
+          console.log("GET_PHOTO", response);
+          dispatch(showLoader());
+          dispatch({ type: GET_PHOTO, payload: response });
+          dispatch(hideLoader());
+        });
+    } catch (err) {
+      console.log("Encountered an error with GET_PHOTO", err);
     }
   };
 }
