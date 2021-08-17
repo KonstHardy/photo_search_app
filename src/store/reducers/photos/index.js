@@ -2,7 +2,8 @@ import {
   SEARCH_PHOTO,
   FETCH_SEARCH,
   FETCH_RANDOM,
-  GET_PHOTO,
+  GET_PHOTO_BY_ID,
+  CLEAR_PHOTO_BY_ID,
 } from "../../constants/photos";
 
 import { ADD_LIKE, REMOVE_LIKE } from "../../constants/like";
@@ -40,10 +41,16 @@ const photoReducer = (state = initialState, action) => {
         photos: mergeByProp(state.photos, action.payload, "id"),
       };
 
-    case GET_PHOTO:
+    case GET_PHOTO_BY_ID:
       return {
         ...state,
         photoPreview: action.payload,
+      };
+
+    case CLEAR_PHOTO_BY_ID:
+      return {
+        ...state,
+        photoPreview: null,
       };
 
     case ADD_LIKE:
@@ -56,6 +63,7 @@ const photoReducer = (state = initialState, action) => {
           }
           return photo;
         }),
+        photoPreview: action.payload,
       };
 
     case REMOVE_LIKE:
@@ -68,6 +76,7 @@ const photoReducer = (state = initialState, action) => {
           }
           return photo;
         }),
+        photoPreview: action.payload,
       };
 
     default:
