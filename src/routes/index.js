@@ -1,8 +1,9 @@
 import React from "react";
 
 import Home from "../pages/home";
-import Gallery from "../pages/gallery";
 import Login from "../pages/login";
+import Gallery from "../pages/gallery";
+import { Modal } from "../components/modal";
 
 const routes = [
   {
@@ -12,16 +13,22 @@ const routes = [
     protected: null,
   },
   {
+    path: "/login",
+    exact: true,
+    component: () => <Login />,
+    protected: null,
+  },
+  {
     path: "/gallery",
     exact: true,
     component: () => <Gallery />,
     protected: "isAuth",
   },
   {
-    path: "/login",
+    path: "/gallery/:id",
     exact: true,
-    component: () => <Login />,
-    protected: null,
+    component: () => <Modal />,
+    protected: "isAuth",
   },
 ];
 
