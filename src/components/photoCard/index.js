@@ -1,16 +1,39 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 
 import "./photoCard.css";
 
 import IconLike from "../icons/iconLike";
 import IconDownload from "../icons/iconDownload";
 
+import { hideModal } from "../../store/actions/modal";
+import { clearPhotoById } from "../../store/actions/photos";
+
 const PhotoCard = (props) => {
+  const modalActive = useSelector((state) => state.modal.showModal);
+
   const { photo } = props;
+  const { id } = photo;
+
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleHideModal = () => {
+    dispatch(hideModal());
+    dispatch(clearPhotoById());
+    history.goBack();
+  };
 
   return (
     <div className="photoCard">
-      <div className="photoCard__content photoCard__content-top">
+      <div
+        className={
+          modalActive
+            ? "photoCard__content photoCard__content-top photoCard__content-topPreview"
+            : "photoCard__content photoCard__content-top"
+        }
+      >
         <time className="content__date">
           {new Date(photo.created_at).toLocaleString()}
         </time>
@@ -23,12 +46,24 @@ const PhotoCard = (props) => {
           <IconDownload />
         </a>
       </div>
-      <img
-        className="photoCard__image"
-        alt={photo.alt_description}
-        src={photo.urls.regular}
-      />
-      <div className="photoCard__content photoCard__content-bottom">
+      <Link to={`/gallery/${id}`}>
+        <img
+          className={
+            modalActive
+              ? "photoCard__image photoCard__imagePreview"
+              : "photoCard__image"
+          }
+          alt={photo.alt_description}
+          src={photo.urls.regular}
+        />
+      </Link>
+      <div
+        className={
+          modalActive
+            ? "photoCard__content photoCard__content-bottom photoCard__content-bottomPreview"
+            : "photoCard__content photoCard__content-bottom"
+        }
+      >
         <a
           className="content__author"
           href={photo.user.links.html}
