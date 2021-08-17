@@ -1,0 +1,88 @@
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(0, 0, 0, 0.9); */
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.modalActive {
+  opacity: 1;
+}
+.modalContent {
+  position: relative;
+  max-width: 80vh;
+  max-height: 90vh;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgb(70, 70, 70);
+  /* background: #fff; */
+  color: #000;
+  transform: scale(0.5);
+  transition: transform 0.2s;
+}
+.modalContentActive {
+  transform: scale(1);
+}
+.modalLoading {
+  text-align: center;
+  color: #fff;
+}
+.btnClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  transform: translate(50%, -50%);
+  z-index: 1;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #000;
+  /* box-shadow: 1px -1px 10px 1px #fff; */
+}
+.btnClose:before,
+.btnClose::after {
+  content: "";
+  width: 55%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 48%;
+  left: 22%;
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
+.btnClose::after {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+.btnClose:hover::before {
+  transform: rotate(135deg);
+  top: 35%;
+  left: 25%;
+  width: 40%;
+}
+.btnClose:hover::after {
+  transform: rotate(-135deg);
+  top: 60%;
+  left: 25%;
+  width: 40%;
+}
+.modalImage {
+  display: flex;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 1px 3px 13px 0 rgba(93, 93, 93, 0.75);
+  transition: box-shadow 0.4s ease;
+}
+.modalImage:hover {
+  cursor: zoom-out;
+}
