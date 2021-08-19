@@ -54,3 +54,8 @@
     transform: translate(24px, 0);
   }
 }
+
+/* for ModalPhoto */
+.loaderModal div {
+  background: #fff;
+}
