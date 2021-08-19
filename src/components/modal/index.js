@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 import "./modal.css";
 
+import Loader from "../loader";
 import PhotoCard from "../photoCard";
 
 import { getPhotoById, clearPhotoById } from "../../store/actions/photos";
@@ -40,15 +41,9 @@ export function Modal() {
         }
         onClick={(event) => event.stopPropagation()}
       >
-        <button className="btnClose" onClick={handleHideModal}></button>
+        <button className="btnClose" onClick={handleHideModal} />
 
-        {photo === null ? (
-          <div className="modalLoading">
-            <p>Loading ...</p>
-          </div>
-        ) : (
-          <PhotoCard photo={photo} />
-        )}
+        {photo === null ? <Loader /> : <PhotoCard photo={photo} />}
       </div>
     </div>
   );
