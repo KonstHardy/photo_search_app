@@ -1,9 +1,9 @@
 import React from "react";
 
-import Home from "../pages/home";
-import Login from "../pages/login";
-import Gallery from "../pages/gallery";
-import { Modal } from "../components/modal";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Gallery from "../pages/Gallery";
+import { PhotoModal } from "../components/PhotoModal";
 
 const routes = [
   {
@@ -27,7 +27,7 @@ const routes = [
   {
     path: "/gallery/:id",
     exact: true,
-    component: () => <Modal />,
+    component: () => <PhotoModal />,
     protected: "isAuth",
   },
 ];

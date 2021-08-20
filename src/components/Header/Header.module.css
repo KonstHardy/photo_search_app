@@ -1,0 +1,58 @@
+.nav {
+  background: #000;
+}
+.navList {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgb(255 255 255 / 50%);
+}
+.navMain {
+  display: flex;
+}
+.link {
+  font-size: 1.3rem;
+}
+.link:first-child {
+  margin-right: 1.5rem;
+}
+.link a {
+  color: #fff;
+}
+.linkSelected {
+  position: relative;
+}
+.linkSelected::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #888888;
+  left: 0;
+  width: 100%;
+  bottom: -4px;
+  transition: width 0.3s ease-in-out;
+}
+.link,
+.linkSelected {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  background: linear-gradient(to right, #1cb1da 50%, #fff 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 0.4s ease;
+}
+.link:hover,
+.linkSelected:hover {
+  background-position: 0 100%;
+}
+.btnLogout {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: none;
+  font-size: 1.3rem;
+}

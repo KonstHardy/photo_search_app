@@ -1,16 +1,16 @@
 import {
-  SEARCH_PHOTO,
-  FETCH_SEARCH,
-  FETCH_RANDOM,
-  GET_PHOTO_BY_ID,
-  CLEAR_PHOTO_BY_ID,
+  SEARCH_PHOTOS,
+  FETCH_SEARCH_PHOTOS,
+  FETCH_RANDOM_PHOTOS,
+  GET_PHOTO_MODAL,
+  REMOVE_PHOTO_MODAL,
 } from "../../constants/photos";
 
 import { ADD_LIKE, REMOVE_LIKE } from "../../constants/like";
 
 const initialState = {
-  photos: [],
-  photoPreview: null,
+  photoList: [],
+  photoModalData: null,
 };
 
 function mergeByProp(arr1, arr2, prop) {
@@ -26,57 +26,57 @@ function mergeByProp(arr1, arr2, prop) {
 
 const photoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SEARCH_PHOTO:
+    case SEARCH_PHOTOS:
       return {
         ...state,
-        photos: action.payload,
+        photoList: action.payload,
       };
 
-    case FETCH_SEARCH:
-      return { ...state, photos: [...state.photos, ...action.payload] };
+    case FETCH_SEARCH_PHOTOS:
+      return { ...state, photoList: [...state.photoList, ...action.payload] };
 
-    case FETCH_RANDOM:
+    case FETCH_RANDOM_PHOTOS:
       return {
         ...state,
-        photos: mergeByProp(state.photos, action.payload, "id"),
+        photoList: mergeByProp(state.photoList, action.payload, "id"),
       };
 
-    case GET_PHOTO_BY_ID:
+    case GET_PHOTO_MODAL:
       return {
         ...state,
-        photoPreview: action.payload,
+        photoModalData: action.payload,
       };
 
-    case CLEAR_PHOTO_BY_ID:
+    case REMOVE_PHOTO_MODAL:
       return {
         ...state,
-        photoPreview: null,
+        photoModalData: null,
       };
 
     case ADD_LIKE:
       return {
         ...state,
-        photos: state.photos.map((photo) => {
+        photoList: state.photoList.map((photo) => {
           if (photo.id === action.payload.id) {
             photo.likes = action.payload.likes;
             photo.liked_by_user = true;
           }
           return photo;
         }),
-        photoPreview: action.payload,
+        photoModalData: action.payload,
       };
 
     case REMOVE_LIKE:
       return {
         ...state,
-        photos: state.photos.map((photo) => {
+        photoList: state.photoList.map((photo) => {
           if (photo.id === action.payload.id) {
             photo.likes = action.payload.likes;
             photo.liked_by_user = false;
           }
           return photo;
         }),
-        photoPreview: action.payload,
+        photoModalData: action.payload,
       };
 
     default:

@@ -1,15 +1,15 @@
 import { combineReducers } from "redux";
 
 import auth from "./auth";
-import photos from "./photos";
 import loader from "./loader";
-import counter from "./counterPage";
-import modal from "./modal";
+import photos from "./photos";
+import photoModal from "./photoModal";
+import pageCounter from "./pageCounter";
 
 export default combineReducers({
   auth,
-  photos,
   loader,
-  counter,
-  modal,
+  photos,
+  photoModal,
+  pageCounter,
 });
