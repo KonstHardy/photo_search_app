@@ -2,11 +2,11 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import Loader from "../../components/Loader";
+import { Loader } from "../../components/Loader";
 
 import { logIn } from "../../store/actions/auth";
 
-export default function Login() {
+export function Login() {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.authentication);
 

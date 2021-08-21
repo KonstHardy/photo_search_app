@@ -3,7 +3,7 @@ import { addLike, removeLike } from "../../../store/actions/like";
 
 import styles from "./IconLike.module.css";
 
-export default function IconLike(props) {
+export function IconLike(props) {
   const { photoId, photoLike } = props;
 
   const dispatch = useDispatch();

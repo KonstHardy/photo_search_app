@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 
 import { logOut } from "../../store/actions/auth";
 
-export default function Header() {
+export function Header() {
   const isAuth = useSelector((state) => state.auth.authentication);
   const dispatch = useDispatch();
   const history = useHistory();

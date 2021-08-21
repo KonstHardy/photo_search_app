@@ -1,8 +1,8 @@
 import React from "react";
 
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Gallery from "../pages/Gallery";
+import { Home } from "../pages/Home";
+import { Login } from "../pages/Login";
+import { Gallery } from "../pages/Gallery";
 import { PhotoModal } from "../components/PhotoModal";
 
 const routes = [

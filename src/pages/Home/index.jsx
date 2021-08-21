@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./Home.module.css";
 
-import Title from "../../components/Title";
+import { Title } from "../../components/Title";
 
-export default function Home() {
+export function Home() {
   return (
     <div className={styles.home}>
       <div className={styles.title}>

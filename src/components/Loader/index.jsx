@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import styles from "./Loader.module.css";
 
-export default function Loader() {
+export function Loader() {
   const modalActive = useSelector((state) => state.photoModal.showPhotoModal);
 
   return (

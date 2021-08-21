@@ -4,8 +4,8 @@ import { useHistory, useParams } from "react-router-dom";
 
 import styles from "./PhotoModal.module.css";
 
-import Photo from "../Photo";
-import Loader from "../Loader";
+import { Photo } from "../Photo";
+import { Loader } from "../Loader";
 
 import { getPhotoModal, removePhotoModal } from "../../store/actions/photos";
 import { hidePhotoModal } from "../../store/actions/photoModal";

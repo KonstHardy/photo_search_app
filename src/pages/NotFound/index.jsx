@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./NotFound.module.css";
 
-export default function NotFound() {
+export function NotFound() {
   return (
     <div className={styles.page}>
       <div className="wrapper">

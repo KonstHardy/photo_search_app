@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Title.module.css";
 
-export default function Title() {
+export function Title() {
   return (
     <>
       <h1 className={styles.title}>Photo Search App</h1>

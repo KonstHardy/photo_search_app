@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import useScroll from "../../hooks/useScroll";
+import { useScroll } from "../../hooks/useScroll";
 
 import styles from "./SearchBar.module.css";
 
@@ -14,7 +14,7 @@ import {
   resetCurrentPage,
 } from "../../store/actions/pageCounter";
 
-export default function SearchBar() {
+export function SearchBar() {
   const page = useSelector((state) => state.pageCounter.currentPage);
 
   const dispatch = useDispatch();

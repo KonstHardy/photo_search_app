@@ -6,8 +6,8 @@ import "./App.css";
 import routes from "./routes";
 import AuthRoute from "./routes/authRoute";
 
-import Header from "./components/Header";
-import NotFound from "./pages/NotFound";
+import { Header } from "./components/Header";
+import { NotFound } from "./pages/NotFound";
 
 export default function App() {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./NoResults.module.css";
 
-export default function NoResults() {
+export function NoResults() {
   return (
     <div className={styles.results}>
       <p className={styles.text}>Sorry, nothing matched your search :(</p>

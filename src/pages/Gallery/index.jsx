@@ -1,9 +1,9 @@
 import React from "react";
 
-import Search from "../../components/Search";
-import PhotoList from "../../components/PhotoList";
+import { Search } from "../../components/Search";
+import { PhotoList } from "../../components/PhotoList";
 
-export default function Gallery() {
+export function Gallery() {
   return (
     <>
       <Search />

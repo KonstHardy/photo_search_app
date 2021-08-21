@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 import styles from "./Photo.module.css";
 
-import IconLike from "../icons/IconLike";
-import IconDownload from "../icons/IconDownload";
+import { IconLike } from "../icons/IconLike";
+import { IconDownload } from "../icons/IconDownload";
 
-export default function Photo(props) {
+export function Photo(props) {
   const modalActive = useSelector((state) => state.photoModal.showPhotoModal);
 
   const { photo } = props;
