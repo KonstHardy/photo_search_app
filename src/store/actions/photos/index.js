@@ -19,7 +19,6 @@ export function searchPhotos(searchQuery) {
         .photos(searchQuery, 1, 10)
         .then(toJson)
         .then((json) => {
-          console.log("SEARCH_PHOTOS", json);
           dispatch(showLoader());
           dispatch({ type: SEARCH_PHOTOS, payload: json.results });
           dispatch(hideLoader());
@@ -37,7 +36,6 @@ export function fetchSearchPhotos(searchQuery, page) {
         .photos(searchQuery, page, 10)
         .then(toJson)
         .then((json) => {
-          console.log("FETCH_SEARCH_PHOTOS", json);
           dispatch(showLoader());
           dispatch({ type: FETCH_SEARCH_PHOTOS, payload: json.results });
           dispatch(hideLoader());
@@ -54,10 +52,9 @@ export function fetchRandomPhotos(page) {
       await unsplash.search
         .photos(page, 10)
         .then(toJson)
-        .then((response) => {
-          console.log("FETCH_RANDOM_PHOTOS", response.results);
+        .then((json) => {
           dispatch(showLoader());
-          dispatch({ type: FETCH_RANDOM_PHOTOS, payload: response.results });
+          dispatch({ type: FETCH_RANDOM_PHOTOS, payload: json.results });
           dispatch(hideLoader());
         });
     } catch (err) {
@@ -73,12 +70,8 @@ export function getPhotoModal(id) {
         .getPhoto(id)
         .then(toJson)
         .then((response) => {
-          console.log("GET_PHOTO_MODAL", response);
           dispatch(showLoader());
-          dispatch({
-            type: GET_PHOTO_MODAL,
-            payload: response,
-          });
+          dispatch({ type: GET_PHOTO_MODAL, payload: response });
           dispatch(hideLoader());
         })
         .then(dispatch(showPhotoModal()));

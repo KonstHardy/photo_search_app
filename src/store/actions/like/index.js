@@ -10,9 +10,6 @@ export function addLike(photoId) {
         .likePhoto(photoId)
         .then(toJson)
         .then((json) => {
-          console.log("ADD_LIKE", json);
-          console.log("like counter", json.photo.likes);
-          console.log("json.photo", json.photo);
           dispatch({ type: ADD_LIKE, payload: json.photo });
         });
     } catch (err) {
@@ -28,8 +25,6 @@ export function removeLike(photoId) {
         .unlikePhoto(photoId)
         .then(toJson)
         .then((json) => {
-          console.log("REMOVE_LIKE", json);
-          console.log("like counter", json.photo.likes);
           dispatch({ type: REMOVE_LIKE, payload: json.photo });
         });
     } catch (err) {
