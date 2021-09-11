@@ -1,7 +1,7 @@
 .search {
   padding-top: 6rem;
   padding-bottom: 7rem;
-  background: #000;
+  background: var(--color-black);
 }
 .searchWrapper {
   max-width: 640px;

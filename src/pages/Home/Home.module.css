@@ -1,8 +1,8 @@
 .title {
   padding-top: 6rem;
   padding-bottom: 7rem;
-  background: #000;
-  color: #fff;
+  background: var(--color-black);
+  color: var(--color-white);
 }
 .titleWrapper {
   max-width: 640px;
@@ -30,5 +30,5 @@
   font-size: 1.3rem;
   line-height: 2rem;
   letter-spacing: 0.5px;
-  color: #222;
+  color: var(--color-textNotification);
 }

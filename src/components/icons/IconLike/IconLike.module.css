@@ -1,18 +1,18 @@
 .root {
   cursor: pointer;
-  fill: rgb(255 255 255 / 65%);
+  fill: var(--color-iconLike);
   transition: transform 0.1s ease;
 }
 .root:hover {
-  fill: #eb3636;
+  fill: var(--color-iconLikeHover);
   transform: translateY(-1px);
 }
 .rootActive {
   cursor: pointer;
-  fill: #df3535;
+  fill: var(--color-iconLikeActive);
   transition: transform 0.1s ease;
 }
 .rootActive:hover {
-  fill: #878282;
+  fill: var(--color-iconLikeActiveHover);
   transform: translateY(-1px);
 }

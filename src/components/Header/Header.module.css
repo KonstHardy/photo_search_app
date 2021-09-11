@@ -1,12 +1,12 @@
 .nav {
-  background: #000;
+  background: var(--color-black);
 }
 .navList {
   display: flex;
   justify-content: space-between;
   padding-top: 3rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgb(255 255 255 / 50%);
+  border-bottom: 1px solid var(--color-borderNav);
 }
 .navMain {
   display: flex;
@@ -18,26 +18,18 @@
   margin-right: 1.5rem;
 }
 .link a {
-  color: #fff;
-}
-.linkSelected {
-  position: relative;
-}
-.linkSelected::after {
-  position: absolute;
-  content: "";
-  border-bottom: 2px solid #888888;
-  left: 0;
-  width: 100%;
-  bottom: -4px;
-  transition: width 0.3s ease-in-out;
+  color: var(--color-white);
 }
 .link,
 .linkSelected {
   position: relative;
   display: inline-block;
   font-weight: 600;
-  background: linear-gradient(to right, #1cb1da 50%, #fff 50%);
+  background: linear-gradient(
+    to right,
+    var(--color-blue) 50%,
+    var(--color-white) 50%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -52,7 +44,7 @@
 .btnLogout {
   cursor: pointer;
   border: none;
-  color: #fff;
+  color: var(--color-white);
   background: none;
   font-size: 1.3rem;
 }

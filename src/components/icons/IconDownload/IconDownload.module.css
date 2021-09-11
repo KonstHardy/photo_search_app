@@ -1,9 +1,9 @@
 .root {
   cursor: pointer;
-  fill: rgb(255 255 255 / 60%);
+  fill: var(--color-iconDownload);
   transition: transform 0.1s ease;
 }
 .root:hover {
-  fill: #e9e9e9;
+  fill: var(--color-iconDownloadHover);
   transform: translateY(1px);
 }

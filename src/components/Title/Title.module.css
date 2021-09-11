@@ -2,13 +2,13 @@
   font-family: Calibri, sans-serif;
   font-size: 4.5rem;
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
 }
 .subtitle {
   font-family: Calibri, sans-serif;
   font-size: 0.85rem;
   margin-bottom: 4.5rem;
-  color: #ccc;
+  color: var(--color-textSubtitle);
 }
 .subtitle::before {
   content: "*";
@@ -19,7 +19,11 @@
   position: relative;
   display: inline-block;
   font-weight: 600;
-  background: linear-gradient(to right, #1cb1da 50%, #fff 50%);
+  background: linear-gradient(
+    to right,
+    var(--color-blue) 50%,
+    var(--color-white) 50%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,7 +37,7 @@
 .link::after {
   position: absolute;
   content: "";
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color-textSubtitle);
   width: 0;
   left: 0;
   bottom: -2px;

@@ -11,7 +11,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #3b3b3b;
+  background: var(--color-gray);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .root div:nth-child(1) {
@@ -57,5 +57,5 @@
 
 /* for PhotoModal */
 .rootModal div {
-  background: #fff;
+  background: var(--color-white);
 }

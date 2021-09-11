@@ -7,13 +7,13 @@
   width: 100%;
   padding: 15px;
   font-size: 1rem;
-  border: 1px solid #3b3b3b;
+  border: 1px solid var(--color-gray);
   border-radius: 0.4rem 0 0 0.4rem;
-  color: #3b3b3b;
+  color: var(--color-gray);
   outline: none;
 }
 .input::placeholder {
-  color: #3b3b3b;
+  color: var(--color-gray);
 }
 .btnSearch {
   position: relative;
@@ -21,8 +21,8 @@
   font-size: 1rem;
   font-weight: 500;
   border-radius: 0 0.4rem 0.4rem 0;
-  color: #fff;
-  background: #3b3b3b;
+  color: var(--color-white);
+  background: var(--color-gray);
 }
 .span {
   position: relative;
@@ -36,7 +36,7 @@
   width: 0;
   height: 100%;
   border-radius: 0 0.4rem 0.4rem 0;
-  background: #484646;
+  background: var(--color-btnSearchHover);
   transition: width 0.35s;
 }
 .btnSearch:hover::after,

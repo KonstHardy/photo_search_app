@@ -7,5 +7,5 @@
   font-size: 1.3rem;
   line-height: 2rem;
   letter-spacing: 0.5px;
-  color: #222;
+  color: var(--color-textNotification);
 }

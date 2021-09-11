@@ -17,3 +17,33 @@ a {
   outline: none;
   cursor: pointer;
 }
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-blue: #1cb1da;
+  --color-gray: #3b3b3b;
+
+  --color-borderNav: rgb(255 255 255 / 50%);
+  --color-btnSearchHover: #484646;
+
+  --color-textSubtitle: #ccc;
+  --color-textPhotoDate: rgb(255 255 255 / 70%);
+  --color-textNotification: #222;
+  --color-textNotFound: #55595d;
+
+  --color-bgPhotoModal: rgba(0, 0, 0, 0.9);
+  --color-bgPhotoModalContent: #ffffff70;
+  --color-bgNotFound: rgba(255, 255, 255, 0.8);
+
+  --color-shadowPhoto: rgb(0 0 0 / 50%);
+  --color-shadowPhotoModal: #ffffff80;
+  --color-shadowBtnCloseModal: #cccccc80;
+
+  --color-iconDownload: rgb(255 255 255 / 60%);
+  --color-iconDownloadHover: #e9e9e9;
+  --color-iconLike: rgb(255 255 255 / 65%);
+  --color-iconLikeHover: #eb3636;
+  --color-iconLikeActive: #df3535;
+  --color-iconLikeActiveHover: #878282;
+}
