@@ -5,6 +5,7 @@ import styles from './PhotoList.module.css';
 
 import { Photo } from '../Photo';
 import { NoResults } from '../NoResults';
+import { ScrollButton } from '../ScrollButton';
 import { Loader } from '../Loader';
 
 export function PhotoList() {
@@ -22,6 +23,7 @@ export function PhotoList() {
       ) : (
         <NoResults />
       )}
+      <ScrollButton />
 
       {loading ? <Loader /> : null}
     </div>
