@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./NoResults.module.css";
+import styles from './NoResults.module.css';
 
 export function NoResults() {
   return (

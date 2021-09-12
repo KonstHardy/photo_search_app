@@ -1,4 +1,4 @@
-import { LOG_IN, LOG_OUT } from "../../constants/auth";
+import { LOG_IN, LOG_OUT } from '../../constants/auth';
 
 const initialState = {
   authentication: false,

@@ -1,24 +1,24 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import "./App.css";
+import './App.css';
 
-import routes from "./routes";
-import AuthRoute from "./routes/authRoute";
+import routes from './routes';
+import AuthRoute from './routes/authRoute';
 
-import { Header } from "./components/Header";
-import { NotFound } from "./pages/NotFound";
+import { Header } from './components/Header';
+import { NotFound } from './pages/NotFound';
 
 export default function App() {
   return (
     <Router>
       <Header />
       <Switch>
-        {routes.map((route, index) => {
-          if (route.protected === "isAuth") {
+        {routes.map((route) => {
+          if (route.protected === 'isAuth') {
             return (
               <AuthRoute
-                key={index}
+                key={route}
                 path={route.path}
                 exact={route.exact}
                 component={route.component}
@@ -28,7 +28,7 @@ export default function App() {
 
           return (
             <Route
-              key={index}
+              key={route}
               path={route.path}
               exact={route.exact}
               component={route.component}

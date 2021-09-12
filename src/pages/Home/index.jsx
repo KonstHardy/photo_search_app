@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./Home.module.css";
+import styles from './Home.module.css';
 
-import { Title } from "../../components/Title";
+import { Title } from '../../components/Title';
 
 export function Home() {
   return (

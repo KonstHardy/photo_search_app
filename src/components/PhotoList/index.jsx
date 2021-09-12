@@ -1,11 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import styles from "./PhotoList.module.css";
+import styles from './PhotoList.module.css';
 
-import { Photo } from "../Photo";
-import { NoResults } from "../NoResults";
-import { Loader } from "../Loader";
+import { Photo } from '../Photo';
+import { NoResults } from '../NoResults';
+import { Loader } from '../Loader';
 
 export function PhotoList() {
   const photos = useSelector((state) => state.photos.photoList);

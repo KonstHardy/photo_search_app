@@ -1,7 +1,7 @@
 import {
   SET_CURRENT_PAGE,
   RESET_CURRENT_PAGE,
-} from "../../constants/pageCounter";
+} from '../../constants/pageCounter';
 
 const initialPage = 1;
 

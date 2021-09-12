@@ -1,4 +1,4 @@
-import { SHOW_PHOTO_MODAL, HIDE_PHOTO_MODAL } from "../../constants/photoModal";
+import { SHOW_PHOTO_MODAL, HIDE_PHOTO_MODAL } from '../../constants/photoModal';
 
 export function showPhotoModal() {
   return {

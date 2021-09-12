@@ -1,4 +1,4 @@
-import styles from "./IconDownload.module.css";
+import styles from './IconDownload.module.css';
 
 export function IconDownload() {
   return (

@@ -1,18 +1,18 @@
-import { toJson } from "unsplash-js";
-import unsplash from "../../../api";
+import { toJson } from 'unsplash-js';
+import unsplash from '../../../api';
 
-import { LOG_IN, LOG_OUT } from "../../constants/auth";
+import { LOG_IN, LOG_OUT } from '../../constants/auth';
 
 const authenticationUrl = unsplash.auth.getAuthenticationUrl([
-  "public",
-  "read_user",
-  "write_user",
-  "read_photos",
-  "write_photos",
-  "write_likes",
+  'public',
+  'read_user',
+  'write_user',
+  'read_photos',
+  'write_photos',
+  'write_likes',
 ]);
 
-const code = window.location.search.split("code=")[1];
+const code = window.location.search.split('code=')[1];
 
 export function logIn() {
   return async (dispatch) => {
@@ -23,21 +23,21 @@ export function logIn() {
         .then((json) => {
           unsplash.auth.setBearerToken(json.access_token);
           if (code) {
-            localStorage.setItem("BearerToken", json.access_token);
+            localStorage.setItem('BearerToken', json.access_token);
             dispatch({ type: LOG_IN });
           } else {
             window.location.assign(authenticationUrl);
           }
         });
-    } catch (err) {
-      console.log("Encountered an error with Authentication", err);
+    } catch (error) {
+      console.error('Encountered an error with Authentication', error);
     }
   };
 }
 
 export function logOut() {
   return (dispatch) => {
-    localStorage.removeItem("BearerToken");
+    localStorage.removeItem('BearerToken');
     dispatch({ type: LOG_OUT });
   };
 }

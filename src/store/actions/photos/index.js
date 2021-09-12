@@ -1,5 +1,5 @@
-import { toJson } from "unsplash-js";
-import unsplash from "../../../api";
+import { toJson } from 'unsplash-js';
+import unsplash from '../../../api';
 
 import {
   SEARCH_PHOTOS,
@@ -7,10 +7,10 @@ import {
   FETCH_RANDOM_PHOTOS,
   GET_PHOTO_MODAL,
   REMOVE_PHOTO_MODAL,
-} from "../../constants/photos";
+} from '../../constants/photos';
 
-import { showLoader, hideLoader } from "../loader";
-import { showPhotoModal } from "../photoModal";
+import { showLoader, hideLoader } from '../loader';
+import { showPhotoModal } from '../photoModal';
 
 export function searchPhotos(searchQuery) {
   return async (dispatch) => {
@@ -23,8 +23,8 @@ export function searchPhotos(searchQuery) {
           dispatch({ type: SEARCH_PHOTOS, payload: json.results });
           dispatch(hideLoader());
         });
-    } catch (err) {
-      console.log("Encountered an error with SEARCH_PHOTOS", err);
+    } catch (error) {
+      console.error('Encountered an error with SEARCH_PHOTOS', error);
     }
   };
 }
@@ -40,8 +40,8 @@ export function fetchSearchPhotos(searchQuery, page) {
           dispatch({ type: FETCH_SEARCH_PHOTOS, payload: json.results });
           dispatch(hideLoader());
         });
-    } catch (err) {
-      console.log("Encountered an error with FETCH_SEARCH_PHOTOS", err);
+    } catch (error) {
+      console.error('Encountered an error with FETCH_SEARCH_PHOTOS', error);
     }
   };
 }
@@ -57,8 +57,8 @@ export function fetchRandomPhotos(page) {
           dispatch({ type: FETCH_RANDOM_PHOTOS, payload: json.results });
           dispatch(hideLoader());
         });
-    } catch (err) {
-      console.log("Encountered an error with FETCH_RANDOM_PHOTOS", err);
+    } catch (error) {
+      console.error('Encountered an error with FETCH_RANDOM_PHOTOS', error);
     }
   };
 }
@@ -75,8 +75,8 @@ export function getPhotoModal(id) {
           dispatch(hideLoader());
         })
         .then(dispatch(showPhotoModal()));
-    } catch (err) {
-      console.log("Encountered an error with GET_PHOTO_MODAL", err);
+    } catch (error) {
+      console.error('Encountered an error with GET_PHOTO_MODAL', error);
     }
   };
 }

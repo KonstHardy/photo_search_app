@@ -1,10 +1,10 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { Loader } from "../../components/Loader";
+import { Loader } from '../../components/Loader';
 
-import { logIn } from "../../store/actions/auth";
+import { logIn } from '../../store/actions/auth';
 
 export function Login() {
   const dispatch = useDispatch();

@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
 
-import styles from "./PhotoModal.module.css";
+import styles from './PhotoModal.module.css';
 
-import { Photo } from "../Photo";
-import { Loader } from "../Loader";
+import { Photo } from '../Photo';
+import { Loader } from '../Loader';
 
-import { getPhotoModal, removePhotoModal } from "../../store/actions/photos";
-import { hidePhotoModal } from "../../store/actions/photoModal";
+import { getPhotoModal, removePhotoModal } from '../../store/actions/photos';
+import { hidePhotoModal } from '../../store/actions/photoModal';
 
 export function PhotoModal() {
   const modalActive = useSelector((state) => state.photoModal.showPhotoModal);
@@ -38,6 +38,8 @@ export function PhotoModal() {
           : `${styles.photoModal}`
       }
       onClick={handleHidePhotoModal}
+      onKeyDown={handleHidePhotoModal}
+      aria-hidden="true"
     >
       <div
         className={
@@ -46,8 +48,15 @@ export function PhotoModal() {
             : `${styles.content}`
         }
         onClick={(event) => event.stopPropagation()}
+        onKeyDown={(event) => event.stopPropagation()}
+        aria-hidden="true"
       >
-        <button className={styles.btnClose} onClick={handleHidePhotoModal} />
+        <button
+          className={styles.btnClose}
+          onClick={handleHidePhotoModal}
+          type="button"
+          aria-label="close button"
+        />
 
         {photo === null ? <Loader /> : <Photo photo={photo} />}
       </div>

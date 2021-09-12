@@ -4,9 +4,9 @@ import {
   FETCH_RANDOM_PHOTOS,
   GET_PHOTO_MODAL,
   REMOVE_PHOTO_MODAL,
-} from "../../constants/photos";
+} from '../../constants/photos';
 
-import { ADD_LIKE, REMOVE_LIKE } from "../../constants/like";
+import { ADD_LIKE, REMOVE_LIKE } from '../../constants/like';
 
 const initialState = {
   photoList: [],
@@ -17,9 +17,7 @@ function mergeByProp(arr1, arr2, prop) {
   const map = new Map();
 
   arr1.forEach((item) => map.set(item[prop], item));
-  arr2.forEach((item) =>
-    map.set(item[prop], { ...map.get(item[prop]), ...item })
-  );
+  arr2.forEach((item) => map.set(item[prop], { ...map.get(item[prop]), ...item }));
 
   return Array.from(map.values());
 }
@@ -38,7 +36,7 @@ const photoReducer = (state = initialState, action) => {
     case FETCH_RANDOM_PHOTOS:
       return {
         ...state,
-        photoList: mergeByProp(state.photoList, action.payload, "id"),
+        photoList: mergeByProp(state.photoList, action.payload, 'id'),
       };
 
     case GET_PHOTO_MODAL:

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./Search.module.css";
+import styles from './Search.module.css';
 
-import { Title } from "../Title";
-import { SearchBar } from "../SearchBar";
+import { Title } from '../Title';
+import { SearchBar } from '../SearchBar';
 
 export function Search() {
   return (

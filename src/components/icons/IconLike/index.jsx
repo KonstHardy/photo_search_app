@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { addLike, removeLike } from "../../../store/actions/like";
+import { useDispatch } from 'react-redux';
+import { addLike, removeLike } from '../../../store/actions/like';
 
-import styles from "./IconLike.module.css";
+import styles from './IconLike.module.css';
 
 export function IconLike(props) {
   const { photoId, photoLike } = props;
@@ -13,9 +13,7 @@ export function IconLike(props) {
       className={photoLike ? `${styles.rootActive}` : `${styles.root}`}
       width={17}
       height={17}
-      onClick={() => {
-        photoLike ? dispatch(removeLike(photoId)) : dispatch(addLike(photoId));
-      }}
+      onClick={() => (photoLike ? dispatch(removeLike(photoId)) : dispatch(addLike(photoId)))}
     >
       <path
         fillRule="evenodd"

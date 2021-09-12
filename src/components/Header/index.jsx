@@ -1,10 +1,10 @@
-import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
-import styles from "./Header.module.css";
+import styles from './Header.module.css';
 
-import { logOut } from "../../store/actions/auth";
+import { logOut } from '../../store/actions/auth';
 
 export function Header() {
   const isAuth = useSelector((state) => state.auth.authentication);
@@ -12,7 +12,7 @@ export function Header() {
   const history = useHistory();
 
   const handleClick = () => {
-    history.replace("/");
+    history.replace('/');
     dispatch(logOut());
   };
 
@@ -34,7 +34,11 @@ export function Header() {
           </span>
           <li className={styles.link}>
             {isAuth ? (
-              <button className={styles.btnLogout} onClick={handleClick}>
+              <button
+                className={styles.btnLogout}
+                onClick={handleClick}
+                type="button"
+              >
                 Logout
               </button>
             ) : (

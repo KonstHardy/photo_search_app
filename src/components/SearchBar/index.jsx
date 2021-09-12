@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useScroll } from "../../hooks/useScroll";
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useScroll } from '../../hooks/useScroll';
 
-import styles from "./SearchBar.module.css";
+import styles from './SearchBar.module.css';
 
 import {
   searchPhotos,
   fetchSearchPhotos,
   fetchRandomPhotos,
-} from "../../store/actions/photos";
+} from '../../store/actions/photos';
 import {
   setCurrentPage,
   resetCurrentPage,
-} from "../../store/actions/pageCounter";
+} from '../../store/actions/pageCounter';
 
 export function SearchBar() {
   const page = useSelector((state) => state.pageCounter.currentPage);
 
   const dispatch = useDispatch();
   const scrollPosition = useScroll();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +29,7 @@ export function SearchBar() {
 
   useEffect(() => {
     if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
-      searchQuery === ""
+      searchQuery === ''
         ? dispatch(fetchRandomPhotos(page))
         : dispatch(fetchSearchPhotos(searchQuery.trim(), page));
       dispatch(setCurrentPage(page));
@@ -43,9 +43,9 @@ export function SearchBar() {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         type="text"
-        placeholder={`Try searching "dogs" or "cats"`}
+        placeholder={'Try searching "dogs" or "cats"'}
         required
-      ></input>
+      />
       <button className={`btn ${styles.btnSearch}`} type="submit">
         <span className={styles.span}>Search</span>
       </button>
