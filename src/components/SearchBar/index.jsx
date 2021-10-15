@@ -28,7 +28,7 @@ export function SearchBar() {
   };
 
   useEffect(() => {
-    if (scrollPosition >= document.body.offsetHeight - window.innerHeight) {
+    if (Math.ceil(scrollPosition) >= document.body.offsetHeight - window.innerHeight) {
       searchQuery === ''
         ? dispatch(fetchRandomPhotos(page))
         : dispatch(fetchSearchPhotos(searchQuery.trim(), page));
