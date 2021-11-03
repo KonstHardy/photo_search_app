@@ -12,33 +12,27 @@
   display: flex;
 }
 .link {
-  font-size: 1.3rem;
-}
-.link:first-child {
-  margin-right: 1.5rem;
-}
-.link a {
-  color: var(--color-white);
-}
-.link,
-.linkSelected {
   position: relative;
   display: inline-block;
+  font-size: 1.3rem;
   font-weight: 600;
+  color: var(--color-white);
   background: linear-gradient(
     to right,
     var(--color-blue) 50%,
     var(--color-white) 50%
-  );
-  background-clip: text;
+    );
+    background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
   transition: background-position 0.4s ease;
 }
-.link:hover,
-.linkSelected:hover {
+.link:first-child {
+  margin-right: 1.5rem;
+}
+.link:hover {
   background-position: 0 100%;
 }
 .btnLogout {

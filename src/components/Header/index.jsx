@@ -22,12 +22,12 @@ export function Header() {
         <ul className={`list ${styles.navList}`}>
           <span className={styles.navMain}>
             <li className={styles.link}>
-              <NavLink to="/" exact activeClassName="linkSelected">
+              <NavLink to="/" exact>
                 Home
               </NavLink>
             </li>
             <li className={styles.link}>
-              <NavLink to="/gallery" activeClassName="linkSelected">
+              <NavLink to="/gallery">
                 Gallery
               </NavLink>
             </li>
@@ -42,7 +42,7 @@ export function Header() {
                 Logout
               </button>
             ) : (
-              <NavLink to="/login" activeClassName="linkSelected">
+              <NavLink to="/login">
                 Login
               </NavLink>
             )}
