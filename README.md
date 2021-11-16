@@ -1,25 +1,24 @@
-# photo_search_app
+# [photo_search_app](https://nifty-joliot-938f87.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Preview](./preview/preview.gif)
 
-## Available Scripts
+## Preview
 
-In the project directory, you can run:
+You can check out [live preview](https://nifty-joliot-938f87.netlify.app/).
 
-### `npm start`
+## Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.  Clone the repo `git clone https://github.com/KonstHardy/photo_search_app.git` 
+2.  Go to `api` folder of your project and modify your `index.js` file:
+```
+ APP_ACCESS_KEY = your_app_access_key
+ APP_SECRET = your_app_secret_key
+```  
+3.  Go to your project folder from your terminal
+4.  Run: `npm install` 
+5.  After install, run: `npm start`
+6.  It will open your browser (http://localhost:3000)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Note
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project is built on top of [Create React App](https://github.com/facebook/create-react-app), which means all features that create-react-app supports are available.
