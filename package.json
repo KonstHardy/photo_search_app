@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Web App with a custom design and endless photo scroll. This app was built with React.js & Redux uses Unsplash API for photo search and photo download",
   "private": true,
+  "homepage": "https://github.com/KonstHardy/photo_search_app/",
   "author": "KonstHardy",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
