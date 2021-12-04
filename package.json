@@ -1,6 +1,7 @@
 {
   "name": "photo_search_app",
   "version": "0.1.0",
+  "description": "Web App with a custom design and endless photo scroll. This app was built with React.js & Redux uses Unsplash API for photo search and photo download",
   "private": true,
   "author": "KonstHardy",
   "dependencies": {
